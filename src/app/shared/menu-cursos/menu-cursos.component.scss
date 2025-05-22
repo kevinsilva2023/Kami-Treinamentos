@@ -1,0 +1,42 @@
+:host {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden; /* não deixa scroll no host */
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('../../../assets/background-web.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.container {
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden; 
+  background-color: #0b1e3d70;
+  // border: 1px solid #0B1E3D; 
+}
+
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background-color: #0D2D54;
+  cursor: pointer;
+}
+

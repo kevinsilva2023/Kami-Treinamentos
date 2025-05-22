@@ -1,0 +1,16 @@
+.ver-mais {
+    padding: 5px 10px;
+    border-radius: 15px;
+    gap: 6px;
+    align-items: center;
+    background-color: #0b1e3da4;
+    border: none;
+    color: #FFF;
+    font-weight: bolder;
+    border: 1px solid #0B1E3D;
+    transition: 0.5s;
+
+    &:hover {
+        background-color: #0B1E3D; 
+    }
+}

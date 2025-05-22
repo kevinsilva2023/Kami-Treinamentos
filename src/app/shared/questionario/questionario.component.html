@@ -1,0 +1,34 @@
+<div class="card text-dark p-4 rounded shadow-lg d-flex justify-content-center align-items-center" >
+  <div class="contexto d-flex justify-content-center align-items-center flex-column">
+    <h3 class="fw-bold text-center ">{{ acao }}</h3> <br>
+    <h4 class="fw-bold text-center">{{ pergunta }}</h4> <br><br>
+  </div>
+  <div *ngFor="let alternativa of alternativas; let i = index" class="w-100">
+    <label
+      [for]="'alternativa' + i"
+      class="d-block p-2 rounded mb-2 border border-secondary alternativa-hover"
+      style="cursor: pointer;"
+    >
+      <input
+        type="radio"
+        class="form-check-input me-2"
+        name="resposta"
+        value="alternativa"
+        [id]="'alternativa' + i"
+        (click)="verificarResposta(alternativa)"
+        style="cursor: pointer;"
+      />
+      {{ alternativa }}
+    </label>
+  </div>
+
+  <div class="d-flex justify-content-center gap-3 mt-4 resposta">
+    <p class="fw-bold" *ngIf="resposta !== null">
+      {{ resposta ? 'Correto!' : 'Incorreto!' }}
+    </p>
+    <p *ngIf="justificativa">
+      {{ justificativa }}
+    </p>
+  </div>
+  <br>
+</div>

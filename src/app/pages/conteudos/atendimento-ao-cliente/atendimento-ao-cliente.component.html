@@ -1,0 +1,117 @@
+<div class="d-flex justify-content-center align-items-center p-5 gap-3" style="height: 100vh; width: 100%;">
+  <nav ngbNav #nav="ngbNav" class="card p-5 shadow sidebar-scroll" >
+    <div class="fw-bolder mb-3 fs-4">MÓDULO 1</div>
+
+    <!-- VIDEO -->
+    <ng-container ngbNavItem>
+      <div class="d-block">
+        <button ngbNavLink class="botao-sidebar" data-step="1" (click)="marcarComoConcluido(1)">
+          <div>
+            <div class="titulo">Introdução</div>
+            <div class="descricao">Assista o video...</div>
+          </div>
+          <i *ngIf="passosConcluidos.includes(1)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/introducao.mp4"></app-video>
+      </ng-template>
+    </ng-container>
+
+    <!-- VIDEO -->
+    <ng-container ngbNavItem>
+      <div class="d-block">
+        <button ngbNavLink class="botao-sidebar" data-step="2" (click)="marcarComoConcluido(2)">
+          <div>
+            <div class="titulo">Criando Relacionamento</div>
+            <div class="descricao">Assista o video...</div>
+          </div>
+          <i *ngIf="passosConcluidos.includes(2)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4"></app-video>
+      </ng-template>
+    </ng-container>
+
+    <!-- VIDEO E QUESTIONÁRIO -->
+    <ng-container ngbNavItem>
+      <button ngbNavLink class="botao-sidebar" data-step="3" (click)="marcarComoConcluido(3)">
+        <div>
+          <div class="titulo">Perguntas e Respostas</div>
+          <div class="descricao">Responda o Questionário.</div>
+        </div>
+        <i *ngIf="passosConcluidos.includes(3)" class="fa-solid fa-circle-check check-icon"></i>
+      </button>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/questionario1.mp4" [mostrarBotao]="true">
+          </app-video>
+          <app-questionario
+            pergunta="Oi, gente! Já chegou a hora de mandar aqueles documentos temidos de novo? 😅"
+            acao="Como você responderia? Escolha a melhor opção abaixo:"
+            [alternativas]="[
+                'Boa tarde. Favor enviar os documentos fiscais até o dia 5. Att.',
+                'Hahaha, chegou sim! Mas relaxa que a gente nem liga se atrasar um pouquinho 😜.',
+                'Isso mesmo! 😄 Já estamos no período de envio. Se puder nos encaminhar os documentos até o dia 5, agradecemos muito! Qualquer dúvida, é só chamar.',
+                'Prezada cliente, conforme cronograma, solicitamos o envio dos documentos obrigatórios. Contamos com sua colaboração.'
+              ]"
+            correta="Isso mesmo! 😄 Já estamos no período de envio. Se puder nos encaminhar os documentos até o dia 5, agradecemos muito! Qualquer dúvida, é só chamar."
+            [justificativas]="{
+                'Boa tarde. Favor enviar os documentos fiscais até o dia 5. Att.':
+                  '❌ Resposta correta em conteúdo, mas fria e impessoal para o perfil da cliente.',
+                'Hahaha, chegou sim! Mas relaxa que a gente nem liga se atrasar um pouquinho 😜.':
+                  '❌ Muito informal e transmite permissividade que pode comprometer prazos e processos.',
+                'Isso mesmo! 😄 Já estamos no período de envio. Se puder nos encaminhar os documentos até o dia 5, agradecemos muito! Qualquer dúvida, é só chamar.' :
+                  '✅ Resposta ideal: amigável, respeita o tom leve da cliente e mantém o profissionalismo e clareza na orientação.',
+                'Prezada cliente, conforme cronograma, solicitamos o envio dos documentos obrigatórios. Contamos com sua colaboração.':
+                  '❌ Correta tecnicamente, mas excessivamente formal e distante do estilo da cliente.',
+              }"
+              id="questionario">
+          </app-questionario>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <!-- VIDEO E QUESTIONÁRIO -->
+    <ng-container ngbNavItem>
+      <button ngbNavLink class="botao-sidebar" data-step="4" (click)="marcarComoConcluido(4)">
+        <div>
+          <div class="titulo">Perguntas e Respostas</div>
+          <div class="descricao">Responda o Questionário.</div>
+        </div>
+        <i *ngIf="passosConcluidos.includes(4)" class="fa-solid fa-circle-check check-icon"></i>
+      </button>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/questionario2.mp4" [mostrarBotao]="true">
+          </app-video>
+          <app-questionario
+            pergunta="De novo esse negócio de documentos? Toda hora é a mesma coisa. Dá pra ser mais eficiente aí? Já estou sem paciência."
+            acao="Considerando o perfil do cliente e o padrão de atendimento da Gerencer Contabilidade, qual é a melhor forma de responder?"
+            [alternativas]="[
+                'Estamos fazendo o que dá, senhor. Se não estiver satisfeito, pode procurar outra contabilidade.',
+                'Boa tarde. Entendemos sua insatisfação. Os documentos são exigidos mensalmente e seguem abaixo os que precisamos para este período. Permanecemos à disposição.',
+                'Calma, por favor. A gente está fazendo o possível. Só precisamos que envie como sempre.',
+                'Sim, é o mesmo de sempre. Todo mês precisa. Não tem como mudar isso agora.'
+              ]"
+            correta="Boa tarde. Entendemos sua insatisfação. Os documentos são exigidos mensalmente e seguem abaixo os que precisamos para este período. Permanecemos à disposiçã"
+            [justificativas]="{
+                'Estamos fazendo o que dá, senhor. Se não estiver satisfeito, pode procurar outra contabilidade.':
+                  '❌ Resposta reativa e defensiva. Escala o conflito, rompe a postura profissional e pode causar prejuízos para a relação com o cliente...',
+                'Boa tarde. Entendemos sua insatisfação. Os documentos são exigidos mensalmente e seguem abaixo os que precisamos para este período. Permanecemos à disposição.':
+                  '✅ Resposta ideal: demonstra empatia sem perder a firmeza e o foco no processo. Profissional, direta e clara, sem absorver o tom grosseiro.',
+                'Calma, por favor. A gente está fazendo o possível. Só precisamos que envie como sempre.':
+                  '❌ Apesar da tentativa de amenizar, transmite fragilidade e informalidade. Pode ser mal interpretada e gerar mais insatisfação.',
+                'Sim, é o mesmo de sempre. Todo mês precisa. Não tem como mudar isso agora.':
+                  '❌ Seca e direta demais, adota um tom semelhante ao do cliente. Pode soar rude e desinteressada.',
+              }"
+              id="questionario">
+          </app-questionario>
+        </div>
+      </ng-template>
+    </ng-container>
+  </nav>
+  <div [ngbNavOutlet]="nav" class="flex-grow-1"></div>
+</div>
+<app-botao-voltar rota="/home"></app-botao-voltar>
