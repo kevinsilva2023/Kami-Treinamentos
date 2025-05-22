@@ -30,7 +30,7 @@ import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
     VideoComponent,
     BotaoVoltarComponent,
     BotaoVerMaisComponent,
-    ModeloComponent
+    ModeloComponent,
   ],
   imports: [
     BrowserModule,
