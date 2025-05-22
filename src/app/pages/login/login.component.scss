@@ -34,18 +34,20 @@ input {
   font-weight: bolder;
   letter-spacing: 2px;
   caret-color: transparent;
-  border: 2px solid transparent;
+  border: 1px solid #0B1E3D;
   transition: .5s;
 
    &:focus {
     background-color: #0b1e3d49;
-    border: .5px solid #0b1e3d49;
+    border: 1px solid #0b1e3d49;
     color: white;
   }
   &::placeholder {
   color: #999; 
 }
-
+}
+.invalid {
+  height: 10px;
 }
 
 button {

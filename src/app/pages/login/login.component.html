@@ -7,19 +7,21 @@
     #form="ngForm"
     class="d-flex justify-content-center align-items-center flex-column mt-5 gap-3"
   >
-    <input
-      type="text"
-      placeholder="DIGITE SEU NOME"
-      [(ngModel)]="nome" 
-      name="nome"
-      #nomeInput="ngModel"
-      required
-      class="form-control shadow-lg text-center"
-      autocomplete="off"  
-    />
-
-    <div *ngIf="nomeInput.invalid && nomeInput.touched" class="text-danger">
-      O campo nome é obrigatório.
+    <div class="d-flex flex-column gap-2 justify-content-center">
+      <input
+        type="text"
+        placeholder="DIGITE SEU NOME"
+        [(ngModel)]="nome"
+        name="nome"
+        #nomeInput="ngModel"
+        required
+        class="form-control shadow-lg text-center"
+        autocomplete="off"
+        style="margin-bottom: 0 !important;"
+      />
+      <div class="text-danger invalid d-flex justify-content-center mb-1">
+        <p *ngIf="nomeInput.invalid && nomeInput.touched">O campo nome é obrigatório.</p>
+      </div>
     </div>
 
     <button type="submit" [disabled]="form.invalid">Entrar</button>
