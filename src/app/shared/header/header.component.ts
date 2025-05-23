@@ -7,16 +7,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  nomeUsuario: string = '';
+  nomeUsuario = '';
+  podeLimpar = false;
+  usuariosAutorizados = ['kevin', 'kevin silva'];
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.nomeUsuario = localStorage.getItem('usuarioNome') || '';
+    const nome = localStorage.getItem('usuarioNome') || '';
+    this.nomeUsuario = nome;
+
+    this.podeLimpar = this.usuariosAutorizados.includes(nome.toLowerCase());
   }
 
   logout() {
     localStorage.removeItem('usuarioNome');
     this.router.navigate(['/login'])
   }
+
+  limparDados() {
+    const nome = localStorage.getItem('usuarioNome');
+    localStorage.clear();
+    if (nome) {
+      localStorage.setItem('usuarioNome', nome);
+  }
+}
 }

@@ -79,9 +79,10 @@
   .titulo {
     font-weight: bold;
     color: #000;
-    max-width: 100%;
+    max-width: 95%;
+    white-space: nowrap;
   }
-
+    
   .descricao {
     font-weight: normal;
     color: #555;
@@ -117,6 +118,7 @@
   display: flex !important;
   flex-wrap: nowrap;
   overflow-y: scroll;
+
   max-width: 500px;
 }
 .sidebar-scroll::-webkit-scrollbar {
@@ -132,5 +134,11 @@
 .sidebar-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #0d2d54a6;
   cursor: pointer;
+}
+
+
+.ativo {
+  background-color: #0b1e3d5d !important;
+  border-left: 5px solid #0D2D54;
 }
 

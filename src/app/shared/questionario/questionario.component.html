@@ -1,34 +1,40 @@
-<div class="card text-dark p-4 rounded shadow-lg d-flex justify-content-center align-items-center" >
+<div class="card text-dark p-4 rounded shadow-lg d-flex justify-content-center align-items-center">
   <div class="contexto d-flex justify-content-center align-items-center flex-column">
-    <h3 class="fw-bold text-center ">{{ acao }}</h3> <br>
-    <h4 class="fw-bold text-center">{{ pergunta }}</h4> <br><br>
+    <h3 class="fw-bold text-center">{{ acao }}</h3><br>
+    <h4 class="fw-bold text-center">{{ pergunta }}</h4><br><br>
   </div>
-  <div *ngFor="let alternativa of alternativas; let i = index" class="w-100">
+
+  <div 
+    *ngFor="let alternativa of alternativas; let i = index"
+    class="w-100 pergunta"
+  >
     <label
       [for]="'alternativa' + i"
-      class="d-block p-2 rounded mb-2 border border-secondary alternativa-hover"
+      class="d-block p-2 rounded mb-2 border"
+      [ngClass]="{
+        'border-success bg-success text-white': alternativaSelecionada === alternativa && resposta === true,
+        'border-danger bg-danger text-white': alternativaSelecionada === alternativa && resposta === false,
+        'border-secondary alternativa-hover': alternativaSelecionada !== alternativa
+      }"
       style="cursor: pointer;"
     >
       <input
         type="radio"
         class="form-check-input me-2"
         name="resposta"
-        value="alternativa"
         [id]="'alternativa' + i"
-        (click)="verificarResposta(alternativa)"
+        [checked]="alternativaSelecionada === alternativa"
+        [disabled]="bloqueado"
+        (change)="verificarResposta(alternativa)"
         style="cursor: pointer;"
       />
       {{ alternativa }}
     </label>
   </div>
 
-  <div class="d-flex justify-content-center gap-3 mt-4 resposta">
-    <p class="fw-bold" *ngIf="resposta !== null">
-      {{ resposta ? 'Correto!' : 'Incorreto!' }}
-    </p>
+  <div class="d-flex justify-content-center resposta text-center flex-column">
     <p *ngIf="justificativa">
       {{ justificativa }}
     </p>
   </div>
-  <br>
 </div>

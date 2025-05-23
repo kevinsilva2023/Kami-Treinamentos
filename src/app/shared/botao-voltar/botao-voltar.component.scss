@@ -1,6 +1,6 @@
 .botao-voltar {
   position: absolute;
-  top: 30px;
+  top: 25px;
   left: 50px;
   
   button {
@@ -18,4 +18,11 @@
       color: #FFF
     }
   }
+}
+
+@media (max-width: 1560px ) {
+  .botao-voltar {
+    top: 8px
+  }
+  
 }

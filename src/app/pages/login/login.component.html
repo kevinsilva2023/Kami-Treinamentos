@@ -7,6 +7,7 @@
     #form="ngForm"
     class="d-flex justify-content-center align-items-center flex-column mt-5 gap-3"
   >
+    <!-- Campo Nome -->
     <div class="d-flex flex-column gap-2 justify-content-center">
       <input
         type="text"
@@ -17,11 +18,47 @@
         required
         class="form-control shadow-lg text-center"
         autocomplete="off"
-        style="margin-bottom: 0 !important;"
       />
-      <div class="text-danger invalid d-flex justify-content-center mb-1">
-        <p *ngIf="nomeInput.invalid && nomeInput.touched">O campo nome é obrigatório.</p>
-      </div>
+    </div>
+    <div class="text-danger invalid d-flex justify-content-center mb-3">
+      <p *ngIf="nomeInput.invalid && nomeInput.touched">O campo Nome é obrigatório.</p>
+    </div>
+
+    <div class="input-group mb-3 position-relative">
+      <input 
+        [type]="mostrarSenha ? 'text' : 'password'"
+        placeholder="DIGITE SUA SENHA"
+        [(ngModel)]="senha"
+        name="senha"
+        #senhaInput="ngModel"
+        required
+        class="form-control shadow-lg text-center"
+        autocomplete="off"
+        (keydown)="verificarCapsLock($event)"
+        (keyup)="verificarCapsLock($event)"
+        style="text-indent: 50px;"
+        >
+      <i
+        *ngIf="capsLockAtivo"
+        class="fa-solid fa-arrow-up-from-bracket position-absolute"
+        style="top: 50%; left: 25px; transform: translateY(-50%); color: #0B1E3D; font-size: 20px;"
+      ></i>
+      <span        
+        class="input-group-text ver-senha"
+        (click)="mostrarSenha = !mostrarSenha"
+        tabindex="-1"
+      >
+        <i [class]="mostrarSenha ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+      </span>
+    </div>  
+
+    <div class="text-danger invalid d-flex flex-column justify-content-center mb-3">
+      <p class="text-center text-alert" *ngIf="tentouEntrar && senha !== 'adm'">
+        Senha incorreta.
+      </p>
+      <p class="text-center text-alert" *ngIf="senhaInput.invalid && senhaInput.touched">
+        O campo Senha é obrigatório.
+      </p>
     </div>
 
     <button type="submit" [disabled]="form.invalid">Entrar</button>

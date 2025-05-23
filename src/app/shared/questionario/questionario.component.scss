@@ -8,7 +8,12 @@
 
 .resposta {
   height: 30px;
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
+
 .contexto {
   h3 {
     max-width: 90%;
@@ -16,4 +21,14 @@
   h4 {
     max-width: 70%;
   }
+}
+
+@media (max-width: 1560px ) {
+ .resposta p {
+  font-size: 14px;
+ } 
+
+ .pergunta {
+  font-size: 16px;
+ }
 }

@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-center align-items-center p-5 gap-3" style="height: 100vh; width: 100%;">
-  <nav ngbNav #nav="ngbNav" class="card p-5 shadow sidebar-scroll" >
+  <nav ngbNav #nav="ngbNav" class="card p-5 shadow sidebar-scroll" [(activeId)]="activeId">
     <div class="fw-bolder mb-3 fs-4">MÓDULO 1</div>
 
     <!-- VIDEO -->
-    <ng-container ngbNavItem>
+    <ng-container ngbNavItem="1">
       <div class="d-block">
-        <button ngbNavLink class="botao-sidebar" data-step="1" (click)="marcarComoConcluido(1)">
+        <button ngbNavLink class="botao-sidebar" data-step="1" [ngClass]="{ 'ativo': activeId === '1' }">
           <div>
             <div class="titulo">Introdução</div>
             <div class="descricao">Assista o video...</div>
@@ -14,14 +14,18 @@
         </button>
       </div>
       <ng-template ngbNavContent>
-        <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/introducao.mp4"></app-video>
+        <app-video 
+          rotaVideo="../../../../assets/videos/atendimento-ao-cliente/introducao.mp4"
+          (videoFinalizado)="marcarComoConcluido(1)"
+          id="video1"
+        ></app-video>
       </ng-template>
     </ng-container>
 
     <!-- VIDEO -->
-    <ng-container ngbNavItem>
+    <ng-container ngbNavItem="2">
       <div class="d-block">
-        <button ngbNavLink class="botao-sidebar" data-step="2" (click)="marcarComoConcluido(2)">
+        <button ngbNavLink class="botao-sidebar" data-step="2" [ngClass]="{ 'ativo': activeId === '2' }">
           <div >
             <div class="titulo">Criando Relacionamento</div>
             <div class="descricao">Assista o video...</div>
@@ -30,13 +34,17 @@
         </button>
       </div>
       <ng-template ngbNavContent>
-        <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4"></app-video>
+        <app-video 
+          rotaVideo="../../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4"
+          (videoFinalizado)="marcarComoConcluido(2)"
+          id="video2"
+        ></app-video>
       </ng-template>
     </ng-container>
 
     <!-- VIDEO E QUESTIONÁRIO -->
-    <ng-container ngbNavItem>
-      <button ngbNavLink class="botao-sidebar" data-step="3" (click)="marcarComoConcluido(3)">
+    <ng-container ngbNavItem="3">
+      <button ngbNavLink class="botao-sidebar" data-step="3" [ngClass]="{ 'ativo': activeId === '3' }">
         <div>
           <div class="titulo">Perguntas e Respostas</div>
           <div class="descricao">Responda o Questionário.</div>
@@ -45,7 +53,7 @@
       </button>
       <ng-template ngbNavContent>
         <div class="container-scroll" #scrollContainer>
-          <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/questionario1.mp4" [mostrarBotao]="true">
+          <app-video rotaVideo="../../../../assets/videos/atendimento-ao-cliente/questionario1.mp4" [mostrarBotao]="true" id="video3">
           </app-video>
           <app-questionario
             pergunta="Oi, gente! Já chegou a hora de mandar aqueles documentos temidos de novo? 😅"
@@ -67,15 +75,16 @@
                 'Prezada cliente, conforme cronograma, solicitamos o envio dos documentos obrigatórios. Contamos com sua colaboração.':
                   '❌ Correta tecnicamente, mas excessivamente formal e distante do estilo da cliente.',
               }"
-              id="questionario">
+              id="questionario1"
+              (respostaCorreta)="marcarComoConcluido(3)">
           </app-questionario>
         </div>
       </ng-template>
     </ng-container>
 
     <!-- VIDEO E QUESTIONÁRIO -->
-    <ng-container ngbNavItem>
-      <button ngbNavLink class="botao-sidebar" data-step="4" (click)="marcarComoConcluido(4)">
+    <ng-container ngbNavItem="4">
+      <button ngbNavLink class="botao-sidebar" data-step="4" [ngClass]="{ 'ativo': activeId === '4' }">
         <div>
           <div class="titulo">Perguntas e Respostas</div>
           <div class="descricao">Responda o Questionário.</div>
@@ -95,7 +104,7 @@
                 'Calma, por favor. A gente está fazendo o possível. Só precisamos que envie como sempre.',
                 'Sim, é o mesmo de sempre. Todo mês precisa. Não tem como mudar isso agora.'
               ]"
-            correta="Boa tarde. Entendemos sua insatisfação. Os documentos são exigidos mensalmente e seguem abaixo os que precisamos para este período. Permanecemos à disposiçã"
+            correta="Boa tarde. Entendemos sua insatisfação. Os documentos são exigidos mensalmente e seguem abaixo os que precisamos para este período. Permanecemos à disposição."
             [justificativas]="{
                 'Estamos fazendo o que dá, senhor. Se não estiver satisfeito, pode procurar outra contabilidade.':
                   '❌ Resposta reativa e defensiva. Escala o conflito, rompe a postura profissional e pode causar prejuízos para a relação com o cliente...',
@@ -106,7 +115,8 @@
                 'Sim, é o mesmo de sempre. Todo mês precisa. Não tem como mudar isso agora.':
                   '❌ Seca e direta demais, adota um tom semelhante ao do cliente. Pode soar rude e desinteressada.',
               }"
-              id="questionario">
+              id="questionario2"
+              (respostaCorreta)="marcarComoConcluido(4)">
           </app-questionario>
         </div>
       </ng-template>

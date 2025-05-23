@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-center align-items-center p-5 gap-3" style="height: 100vh; width: 100%;">
-  <nav ngbNav #nav="ngbNav" class="card p-5 shadow sidebar-scroll" >
+  <nav ngbNav #nav="ngbNav" class="card p-5 shadow sidebar-scroll" [(activeId)]="activeId">
     <div class="fw-bolder mb-3 fs-4">MÓDULO 1</div>
 
     <!-- VIDEO -->
-    <ng-container ngbNavItem>
+    <ng-container ngbNavItem="1">
       <div class="d-block">
-        <button ngbNavLink class="botao-sidebar" data-step="1" (click)="marcarComoConcluido(1)">
+        <button ngbNavLink class="botao-sidebar" data-step="1" [ngClass]="{ 'ativo': activeId === '1' }">
           <div>
             <div class="titulo">Conteúdo</div>
             <div class="descricao">Descrição</div>
@@ -14,22 +14,30 @@
         </button>
       </div>
       <ng-template ngbNavContent>
-        <app-video rotaVideo="..." [mostrarBotao]="false"></app-video>
+        <app-video 
+          rotaVideo="..." 
+          [mostrarBotao]="false" 
+          (videoFinalizado)="marcarComoConcluido(1)"
+          id="videoid">
+        </app-video>
       </ng-template>
     </ng-container>
 
     <!-- VIDEO E QUESTIONÁRIO -->
-    <ng-container ngbNavItem>
-      <button ngbNavLink class="botao-sidebar" data-step="2" (click)="marcarComoConcluido(2)">
+    <ng-container ngbNavItem="2">
+      <button ngbNavLink class="botao-sidebar" data-step="2" [ngClass]="{ 'ativo': activeId === '2' }">
         <div>
-          <div class="titulo">Conteúdo </div>
+          <div class="titulo">Conteúdo</div>
           <div class="descricao">Responda o Questionário.</div>
         </div>
         <i *ngIf="passosConcluidos.includes(2)" class="fa-solid fa-circle-check check-icon"></i>
       </button>
       <ng-template ngbNavContent>
         <div class="container-scroll" #scrollContainer>
-          <app-video rotaVideo="..." [mostrarBotao]="true">
+          <app-video 
+            rotaVideo="..." 
+            (videoFinalizado)="marcarComoConcluido(2)"
+            id="video2">
           </app-video>
           <app-questionario
             pergunta="LOREM LOREM?"
@@ -47,7 +55,8 @@
                 'Alternativa 3' : 'Justificativa3',
                 'Alternativa 4' : 'Justificativa4',
               }"
-              id="questionario">
+              id="questionario1"
+              (respostaCorreta)="marcarComoConcluido(3)">
           </app-questionario>
         </div>
       </ng-template>
