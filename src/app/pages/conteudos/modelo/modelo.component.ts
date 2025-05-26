@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modelo.component.scss']
 })
 export class ModeloComponent implements OnInit {
-passosConcluidos: number[] = [];
+  passosConcluidos: number[] = [];
   activeId: string = '1';
   private readonly STORAGE_KEY = 'passosConcluidos-atendimento-ao-cliente';
   mostrarBotaoProximo = false;
@@ -30,8 +30,8 @@ passosConcluidos: number[] = [];
   }
 
   irParaProximoPasso() {
-    // const proximo = (parseInt(this.activeId, 10) + 1).toString();
-    // this.activeId = proximo;
+    const proximo = (parseInt(this.activeId, 10) + 1).toString();
+    this.activeId = proximo;
     this.mostrarBotaoProximo = false;
 
    
