@@ -1,0 +1,31 @@
+.filtro-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;  // espaçamento entre botões
+  width: 200px; // largura fixa (pode ajustar)
+}
+
+.btn-filtro {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #0d2d54;  // azul escuro
+  background-color: white;
+  color: #0d2d54;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+.btn-filtro:hover {
+  background-color: #256fad; // azul claro
+  color: white;
+  border-color: #256fad;
+}
+
+.btn-filtro-selecionado {
+  background-color: #0d2d54;  // azul escuro
+  color: white;
+  border-color: #0d2d54;
+  font-weight: bold;
+}

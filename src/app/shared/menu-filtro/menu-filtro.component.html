@@ -1,0 +1,10 @@
+<div class="filtro-container">
+  <button
+    *ngFor="let cat of categorias"
+    type="button"
+    class="btn-filtro"
+    [class.btn-filtro-selecionado]="categoriaSelecionada === cat.valor"
+    (click)="aplicarFiltro(cat.valor)">
+    {{ cat.label }}
+  </button>
+</div>

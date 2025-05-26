@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./atendimento-ao-cliente.component.scss']
 })
 export class AtendimentoAoClienteComponent implements OnInit  {
-
   passosConcluidos: number[] = [];
   activeId: string = '1';
   private readonly STORAGE_KEY = 'passosConcluidos-atendimento-ao-cliente';

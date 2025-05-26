@@ -1,19 +1,42 @@
+<app-menu-filtro 
+  [categoriaSelecionada]="categoriaSelecionada"
+  (filtroMudou)="filtrarCursosPorCategoria($event)">
+</app-menu-filtro>
+
 <div class="container rounded p-4 shadow-lg">
-    <div class="row mb-3">
-        <app-card-curso class="col-4"
-            [titulo]="'A DEFINIR'"
-            [subtitulo]="'A DEFINIR'"
-            [imagemCurso]="'../../../assets/imagens/atendimento-ao-cliente.jpg'"
-            [direcionamentoCurso]="'/cursos/atendimento-ao-cliente'"
-            [desabilitado]="false"  
-        >
-        </app-card-curso>
-        <!-- <app-card-curso class="col-4"
-            [titulo]="'EM BREVE'"
-            [subtitulo]="'NOVOS CURSOS GERENCER'"
-            [imagemCurso]="'../../../assets/imagens/atendimento-ao-cliente.jpg'"
-            [direcionamentoCurso]="'/cursos/modelo'"
-            [desabilitado]="false"
-        ></app-card-curso>   -->
+    <div class="mb-4 d-flex align-items-center">
+    <input type="text"
+            class="form-control"
+            placeholder="Pesquisar curso pelo título..."
+            [(ngModel)]="pesquisa"
+            (ngModelChange)="pesquisaMudou()" />
+
+    <button type="button"
+            class="btn btn-outline-secondary ms-2"
+            (click)="limparPesquisa()"
+            [disabled]="!pesquisa">
+        Limpar
+    </button>
     </div>
+
+
+  <!-- Lista ou mensagem -->
+  <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row mb-3">
+    <app-card-curso 
+      *ngFor="let curso of cursosFiltrados"
+      class="col-4"
+      [titulo]="curso.titulo"
+      [subtitulo]="curso.subtitulo"
+      [imagemCurso]="curso.imagemCurso"
+      [direcionamentoCurso]="curso.direcionamentoCurso"
+      [desabilitado]="curso.desabilitado">
+    </app-card-curso>
+  </div>
+
+  <ng-template #semCursos>
+    <div class="text-center text-white py-5">
+      <h5>Nenhum curso encontrado.</h5>
+    </div>
+  </ng-template>
+
 </div>

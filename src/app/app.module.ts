@@ -18,6 +18,7 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { AtendimentoAoClienteComponent } from './pages/conteudos/atendimento-ao-cliente/atendimento-ao-cliente.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
+import { MenuFiltroComponent } from './shared/menu-filtro/menu-filtro.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
     BotaoVoltarComponent,
     BotaoVerMaisComponent,
     ModeloComponent,
+    MenuFiltroComponent,
   ],
   imports: [
     BrowserModule,
