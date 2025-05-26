@@ -9,30 +9,22 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class MenuCursosComponent implements OnInit, OnDestroy {
 
-  CONTABIL = 'Contábil';
-  FISCAL = 'Fiscal';
-  LEGALIZACAO = 'Legalização';
+  contabil = 'CONTÁBIL';
+  fiscal = 'FISCAL';
+  legalizacao = 'LEGALIZAÇÃO';
 
   pesquisa = '';
   categoriaSelecionada = '';
 
   cursos = [
     {
-      titulo: 'CURSO DO CONTÁBIL',
-      categoria: this.CONTABIL,
-      subtitulo: 'A DEFINIR',
-      imagemCurso: '/assets/imagens/atendimento-ao-cliente.jpg',
+      titulo: 'RECEPÇÃO DE DOCUMENTOS',
+      categoria: this.contabil,
+      subtitulo: 'Capacite-se para atuar no recebimento, conferência e organização de documentos em ambientes administrativos. Desenvolva habilidades para garantir agilidade, precisão e atendimento de qualidade.',
+      imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
       direcionamentoCurso: '/cursos/atendimento-ao-cliente',
       desabilitado: false
-    },
-    {
-      titulo: 'CURSO DO FISCAL',
-      categoria: this.FISCAL,
-      subtitulo: 'A DEFINIR',
-      imagemCurso: '/assets/imagens/atendimento-ao-cliente.jpg',
-      direcionamentoCurso: '/cursos/modelo',
-      desabilitado: false
-    }
+    }, 
   ];
 
   cursosFiltrados = [...this.cursos];

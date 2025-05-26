@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class CardCursoComponent {
   @Input() titulo = '' ;
+  @Input() categoria = '';
   @Input() subtitulo = '';
   @Input() direcionamentoCurso = '';
   @Input() imagemCurso = '';
