@@ -30,8 +30,8 @@ export class AtendimentoAoClienteComponent implements OnInit  {
   }
 
   irParaProximoPasso() {
-    // const proximo = (parseInt(this.activeId, 10) + 1).toString();
-    // this.activeId = proximo;
+    const proximo = (parseInt(this.activeId, 10) + 1).toString();
+    this.activeId = proximo;
     this.mostrarBotaoProximo = false;
 
    
