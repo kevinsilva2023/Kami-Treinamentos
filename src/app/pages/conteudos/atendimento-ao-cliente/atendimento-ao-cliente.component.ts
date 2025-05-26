@@ -9,6 +9,7 @@ export class AtendimentoAoClienteComponent implements OnInit  {
   passosConcluidos: number[] = [];
   activeId: string = '1';
   private readonly STORAGE_KEY = 'passosConcluidos-atendimento-ao-cliente';
+  mostrarBotaoProximo = false;
 
   ngOnInit() {
     const armazenado = localStorage.getItem(this.STORAGE_KEY);
@@ -20,7 +21,15 @@ export class AtendimentoAoClienteComponent implements OnInit  {
   marcarComoConcluido(passo: number) {
     if (!this.passosConcluidos.includes(passo)) {
       this.passosConcluidos.push(passo);
-      localStorage.setItem('passosConcluidos', JSON.stringify(this.passosConcluidos))
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(this.passosConcluidos));
     }
+
+    this.mostrarBotaoProximo = true;
+  }
+
+  irParaProximoPasso() {
+    const proximo = (parseInt(this.activeId, 10) + 1).toString();
+    this.activeId = proximo;
+    this.mostrarBotaoProximo = false;
   }
 }

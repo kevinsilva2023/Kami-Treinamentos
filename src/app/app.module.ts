@@ -19,6 +19,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AtendimentoAoClienteComponent } from './pages/conteudos/atendimento-ao-cliente/atendimento-ao-cliente.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { MenuFiltroComponent } from './shared/menu-filtro/menu-filtro.component';
+import { BotaoProximoItemComponent } from './shared/botao-proximo-item/botao-proximo-item.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MenuFiltroComponent } from './shared/menu-filtro/menu-filtro.component'
     BotaoVerMaisComponent,
     ModeloComponent,
     MenuFiltroComponent,
+    BotaoProximoItemComponent,
   ],
   imports: [
     BrowserModule,

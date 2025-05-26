@@ -19,6 +19,7 @@
           (videoFinalizado)="marcarComoConcluido(1)"
           id="video1"
         ></app-video>
+        <app-botao-proximo-item [visivel]="mostrarBotaoProximo" (avancar)="irParaProximoPasso()"></app-botao-proximo-item>
       </ng-template>
     </ng-container>
 
@@ -39,6 +40,7 @@
           (videoFinalizado)="marcarComoConcluido(2)"
           id="video2"
         ></app-video>
+        <app-botao-proximo-item [visivel]="mostrarBotaoProximo" (avancar)="irParaProximoPasso()"></app-botao-proximo-item>
       </ng-template>
     </ng-container>
 
@@ -79,6 +81,7 @@
               (respostaCorreta)="marcarComoConcluido(3)">
           </app-questionario>
         </div>
+        <app-botao-proximo-item [visivel]="mostrarBotaoProximo" (avancar)="irParaProximoPasso()"></app-botao-proximo-item>
       </ng-template>
     </ng-container>
 
