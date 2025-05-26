@@ -1,3 +1,40 @@
 .btn-outline-info {
     transition: .5s;
 } 
+.card-title {
+    font-weight: 500;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card-subtitle {
+    font-size: 16px;
+}   
+.card-text {
+    font-size: 14px;
+}
+
+.scroll-text {
+  max-height: 90px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.scroll-title {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.scroll-body {
+  font-size: 14px;
+}
+
+.card-img-top {
+    max-height: 150px;
+    object-fit: cover;
+    border: 3px solid #0D2D54;
+}
