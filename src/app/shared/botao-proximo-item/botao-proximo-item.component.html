@@ -1,3 +1,4 @@
-<button *ngIf="visivel" class="btn btn-success mt-4 " (click)="avancar.emit()">
-    AVANÇAR
+<button *ngIf="visivel" class="btn botao-proximo" (click)="onClick()">
+  PRÓXIMO CONTEÚDO
+  <span class="barra-progresso" [style.width.%]="progress"></span>
 </button>
