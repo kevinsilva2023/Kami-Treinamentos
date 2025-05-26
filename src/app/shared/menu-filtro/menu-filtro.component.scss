@@ -1,31 +1,26 @@
 .filtro-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;  // espaçamento entre botões
-  width: 200px; // largura fixa (pode ajustar)
+  gap: 10px; 
+  width: 15vw; 
+  background-color: #0b1e3d70;
+  padding: 20px
 }
 
 .btn-filtro {
   padding: 10px 15px;
-  font-size: 16px;
-  border: 2px solid #0d2d54;  // azul escuro
+  border-radius: 5px;
+  border: 2px solid #0d2d54;  
   background-color: white;
   color: #0d2d54;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: .5s;
 }
 
-.btn-filtro:hover {
-  background-color: #256fad; // azul claro
-  color: white;
-  border-color: #256fad;
-}
-
-.btn-filtro-selecionado {
+.btn-filtro-selecionado, .btn-filtro:hover {
   background-color: #0d2d54;  // azul escuro
   color: white;
-  border-color: #0d2d54;
-  font-weight: bold;
+  cursor: pointer;
+  border: 2px solid #f9f9f9;
 }

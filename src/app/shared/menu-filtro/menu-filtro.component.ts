@@ -10,10 +10,10 @@ export class MenuFiltroComponent {
   @Input() categoriaSelecionada = '';
 
   categorias = [
-    { valor: '', label: 'Remover Filtro' },
     { valor: 'Contábil', label: 'Contábil' },
     { valor: 'Fiscal', label: 'Fiscal' },
-    { valor: 'Legalização', label: 'Legal' }
+    { valor: 'Legalização', label: 'Legal' },
+    { valor: '', label: 'Remover Filtro' },
   ];
 
   aplicarFiltro(valor: string) {

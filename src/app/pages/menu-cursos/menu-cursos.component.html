@@ -1,42 +1,42 @@
-<app-menu-filtro 
-  [categoriaSelecionada]="categoriaSelecionada"
-  (filtroMudou)="filtrarCursosPorCategoria($event)">
-</app-menu-filtro>
-
-<div class="container rounded p-4 shadow-lg">
-    <div class="mb-4 d-flex align-items-center">
-    <input type="text"
-            class="form-control"
-            placeholder="Pesquisar curso pelo título..."
-            [(ngModel)]="pesquisa"
-            (ngModelChange)="pesquisaMudou()" />
-
-    <button type="button"
-            class="btn btn-outline-secondary ms-2"
-            (click)="limparPesquisa()"
-            [disabled]="!pesquisa">
-        Limpar
-    </button>
+<div class="d-flex m-5 gap-3">
+  <app-menu-filtro
+    [categoriaSelecionada]="categoriaSelecionada"
+    (filtroMudou)="filtrarCursosPorCategoria($event)">
+  </app-menu-filtro>
+  
+  <div class="menu-cursos rounded p-4 shadow-lg">
+    <div class="mb-4 d-flex align-items-center gap-2">
+      <input type="text"
+              class="form-control"
+              placeholder="PESQUISAR CURSO PELO TITULO..."
+              [(ngModel)]="pesquisa"
+              (ngModelChange)="pesquisaMudou()" />
+  
+      <button type="button"
+              class="btn btn-outline-secondary ms-2"
+              (click)="limparPesquisa()"
+              [disabled]="!pesquisa">
+          LIMPAR
+      </button>
     </div>
-
-
-  <!-- Lista ou mensagem -->
-  <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row mb-3">
-    <app-card-curso 
-      *ngFor="let curso of cursosFiltrados"
-      class="col-4"
-      [titulo]="curso.titulo"
-      [subtitulo]="curso.subtitulo"
-      [imagemCurso]="curso.imagemCurso"
-      [direcionamentoCurso]="curso.direcionamentoCurso"
-      [desabilitado]="curso.desabilitado">
-    </app-card-curso>
+  
+    <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row mb-3">
+      <app-card-curso
+        *ngFor="let curso of cursosFiltrados"
+        class="col-4"
+        [titulo]="curso.titulo"
+        [subtitulo]="curso.subtitulo"
+        [imagemCurso]="curso.imagemCurso"
+        [direcionamentoCurso]="curso.direcionamentoCurso"
+        [desabilitado]="curso.desabilitado">
+      </app-card-curso>
+    </div>
+  
+    <ng-template #semCursos>
+      <div class="text-center text-white py-5">
+        <h5>Nenhum curso encontrado.</h5>
+      </div>
+    </ng-template>
+  
   </div>
-
-  <ng-template #semCursos>
-    <div class="text-center text-white py-5">
-      <h5>Nenhum curso encontrado.</h5>
-    </div>
-  </ng-template>
-
 </div>
