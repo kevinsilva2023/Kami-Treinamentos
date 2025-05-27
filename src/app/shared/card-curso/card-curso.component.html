@@ -1,26 +1,20 @@
-<div class="card shadow mb-4" style="height: 350px; max-width: 350px;">
-  <img [src]="imagemCurso" class="card-img-top">
-
-  <div class="card-body d-flex flex-column h-100">
-
+<div class="card shadow mb-4 h-100 d-flex flex-column">
+  <img [src]="imagemCurso" class="card-img-top" />
+  <div class="card-body d-flex flex-column flex-grow-1">
     <div class="flex-grow-1">
+      <!-- títulos e texto aqui -->
       <h1 class="card-title ellipsis"><b>CURSO:</b> {{ titulo }}</h1>
       <h2 class="card-subtitle ellipsis"><b>DEPARTAMENTO:</b> {{ categoria }}</h2>
-
-      <div class="scroll-text mt-1">
+      <div class="scroll-text">
         <p class="scroll-title"><b>Objetivo:</b></p>
-        <div class="scroll-body"> {{ subtitulo }} </div>
+        <div class="scroll-body">{{ subtitulo }}</div>
+      </div>
     </div>
-
-    <div>
-      <button 
-        [routerLink]="direcionamentoCurso" 
-        [disabled]="desabilitado"
-        class="btn btn-outline-info fw-bold white w-100 botao-acessar">
-          ASSISTIR
-      </button>
-    </div>
-
+    <button 
+      [routerLink]="direcionamentoCurso"
+      [disabled]="desabilitado"
+      class="btn btn-outline-info fw-bold white w-100 botao-acessar">
+      ASSISTIR
+    </button>
   </div>
 </div>
-<br>

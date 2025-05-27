@@ -23,7 +23,7 @@
     <div class="d-flex flex-column w-100">
       <div class="menu-cursos rounded  shadow-lg p-4">
         <div class="cursos">
-          <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row mb-3">
+          <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row mb-3 align-items-stretch">
             <app-card-curso
               *ngFor="let curso of cursosFiltrados"
               class="col-3"

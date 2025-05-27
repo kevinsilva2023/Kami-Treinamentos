@@ -16,6 +16,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
   pesquisa = '';
   categoriaSelecionada = '';
 
+
   cursos = [
     {
       titulo: 'RECEPÇÃO DE DOCUMENTOS',
@@ -24,7 +25,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
       direcionamentoCurso: '/cursos/atendimento-ao-cliente',
       desabilitado: false
-    }, 
+    }
   ];
 
   cursosFiltrados = [...this.cursos];
