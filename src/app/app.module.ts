@@ -17,9 +17,9 @@ import { MenuCursosComponent } from './pages/menu-cursos/menu-cursos.component';
 import { LoginComponent } from './pages/login/login.component';
 
 import { AtendimentoAoClienteComponent } from './pages/conteudos/atendimento-ao-cliente/atendimento-ao-cliente.component';
-import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { MenuFiltroComponent } from './shared/menu-filtro/menu-filtro.component';
 import { BotaoProximoItemComponent } from './shared/botao-proximo-item/botao-proximo-item.component';
+import { SlideConteudoComponent } from './shared/slide-conteudo/slide-conteudo.component';
 
 
 @NgModule({
@@ -35,9 +35,9 @@ import { BotaoProximoItemComponent } from './shared/botao-proximo-item/botao-pro
     VideoComponent,
     BotaoVoltarComponent,
     BotaoVerMaisComponent,
-    ModeloComponent,
     MenuFiltroComponent,
     BotaoProximoItemComponent,
+    SlideConteudoComponent,
   ],
   imports: [
     BrowserModule,

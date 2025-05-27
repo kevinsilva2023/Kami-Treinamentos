@@ -1,6 +1,25 @@
+.card {
+    height: 350px;
+    width: 350px;
+
+    .card-img-top {
+        height: 160px;
+        width: 100%;
+        object-fit: cover;
+        border: 3px solid #0D2D54;
+        display: block;
+    }
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+}
+
 .btn-outline-info {
     transition: .5s;
 } 
+
 .card-title {
     font-weight: 500;
     font-size: 18px;
@@ -8,17 +27,22 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .card-subtitle {
     font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }   
+
 .card-text {
     font-size: 14px;
 }
 
 .scroll-text {
-  max-height: 90px;
-  overflow-y: auto;
-  padding-right: 4px;
+    max-height: 90px;
+    overflow-y: auto;
+    padding-right: 4px;
 }
 
 .scroll-title {
@@ -30,11 +54,10 @@
 }
 
 .scroll-body {
-  font-size: 14px;
+    font-size: 14px;
 }
 
-.card-img-top {
-    max-height: 150px;
-    object-fit: cover;
-    border: 3px solid #0D2D54;
+.flex-grow-1 {
+    flex-grow: 1;
 }
+

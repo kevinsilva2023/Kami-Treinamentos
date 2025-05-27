@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtendimentoAoClienteComponent implements OnInit  {
   passosConcluidos: number[] = [];
-  activeId: string = '1';
+  activeId: string = '5';
   private readonly STORAGE_KEY = 'passosConcluidos-atendimento-ao-cliente';
   mostrarBotaoProximo = false;
-
   autoAvancarHabilitado = true;  // Define se quer permitir auto avançar
   autoAvancarExecutado = false;  // Marca se já executou auto avanço
+
 
   ngOnInit() {
     const armazenado = localStorage.getItem(this.STORAGE_KEY);
