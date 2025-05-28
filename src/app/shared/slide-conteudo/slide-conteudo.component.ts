@@ -23,4 +23,5 @@ export class SlideConteudoComponent {
 export interface CarouselItem {
   type: 'image' | 'video';
   src: string;
+  
 }

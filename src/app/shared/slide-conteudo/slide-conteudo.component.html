@@ -4,6 +4,7 @@
       <div class="media-wrapper">
         <img *ngIf="item.type === 'image'" [src]="item.src" alt="Slide image" />
         <video *ngIf="item.type === 'video'" [src]="item.src" controls></video>
+        
       </div>
     </ng-template>
   </ngb-carousel>
