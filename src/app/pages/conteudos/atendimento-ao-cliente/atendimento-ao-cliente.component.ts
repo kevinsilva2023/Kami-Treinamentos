@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.component';
 
 @Component({
   selector: 'app-atendimento-ao-cliente',
@@ -7,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtendimentoAoClienteComponent implements OnInit  {
   passosConcluidos: number[] = [];
-  activeId: string = '5';
+  activeId: string = '1';
   private readonly STORAGE_KEY = 'passosConcluidos-atendimento-ao-cliente';
   mostrarBotaoProximo = false;
   autoAvancarHabilitado = true;  // Define se quer permitir auto avançar
   autoAvancarExecutado = false;  // Marca se já executou auto avanço
+
+    carouselItems: CarouselItem[] = [
+      { type: 'video', src: '../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4' },
+      { type: 'video', src: '../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4' },
+      { type: 'video', src: '../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4' },
+      { type: 'image', src: '../../../assets/imagens/atendimento-ao-cliente.jpg' },
+      { type: 'image', src: '../../../assets/imagens/atendimento-ao-cliente.png' },
+    ];
 
 
   ngOnInit() {
