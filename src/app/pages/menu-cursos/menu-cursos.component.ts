@@ -14,8 +14,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
   legalizacao = 'LEGALIZAÇÃO';
 
   pesquisa = '';
-  categoriaSelecionada = '';
-
+  categoriaSelecionada: string | null = null;  // Inicializa sem filtro
 
   cursos = [
     {
@@ -26,6 +25,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       direcionamentoCurso: '/cursos/atendimento-ao-cliente',
       desabilitado: false
     }
+    // Pode adicionar mais cursos aqui
   ];
 
   cursosFiltrados = [...this.cursos];
@@ -45,8 +45,13 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
     this.pesquisaSubscription.unsubscribe();
   }
 
-  filtrarCursosPorCategoria(categoria: string) {
-    this.categoriaSelecionada = categoria;
+  // Método para receber o filtro emitido pelo MenuFiltroComponent
+  onFiltroMudou(filtro: string) {
+    if (filtro === 'remover') {
+      this.categoriaSelecionada = null;
+    } else {
+      this.categoriaSelecionada = filtro;
+    }
     this.aplicarFiltros();
   }
 
@@ -77,8 +82,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
         ? tituloNormalizado.includes(pesquisaNormalizada)
         : true;
 
-    return correspondeCategoria && correspondePesquisa;
-  });
-}
-
+      return correspondeCategoria && correspondePesquisa;
+    });
+  }
 }

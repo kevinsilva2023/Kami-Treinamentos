@@ -7,15 +7,15 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class MenuFiltroComponent {
   @Output() filtroMudou = new EventEmitter<string>();
-  @Input() categoriaSelecionada = '';
+  @Input() categoriaSelecionada: string | null = null;
 
   categorias = [
-    { valor: 'INTEGRAÇÃO', label: 'iNTERGRAÇÃO' },
+    { valor: 'INTEGRAÇÃO', label: 'Integração' },
     { valor: 'CONTÁBIL', label: 'Contábil' },
     { valor: 'FISCAL', label: 'Fiscal' },
     { valor: 'LEGALIZAÇÃO', label: 'Legal' },
     { valor: 'PESSOAL', label: 'Pessoal' },
-    { valor: '', label: 'Remover Filtro' },
+    { valor: 'remover', label: 'Remover Filtro' },
   ];
 
   aplicarFiltro(valor: string) {

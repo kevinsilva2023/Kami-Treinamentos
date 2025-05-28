@@ -3,7 +3,7 @@
     *ngFor="let cat of categorias"
     type="button"
     class="btn-filtro"
-    [class.btn-filtro-selecionado]="categoriaSelecionada === cat.valor"
+    [class.btn-filtro-selecionado]="categoriaSelecionada === cat.valor && cat.valor !== 'remover'"
     (click)="aplicarFiltro(cat.valor)">
     {{ cat.label }}
   </button>
