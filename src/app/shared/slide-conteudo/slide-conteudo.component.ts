@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-slide-conteudo',
@@ -6,8 +7,20 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./slide-conteudo.component.scss']
 })
 export class SlideConteudoComponent {
-    listaImagens = [
-      '../../../../assets/imagens/atendimento-ao-cliente.jpg',
-      '../../../assets/imagens/atendimento-ao-cliente.png'
-    ]
+  @Input() items: CarouselItem[] = [];
+  @Output() chegouNoUltimoSlide = new EventEmitter<void>();
+  @ViewChild('carousel', { static: false }) carousel!: NgbCarousel;
+
+  onSlideChange(event: any) {
+    const activeSlideId = parseInt(event.current.replace('ngb-slide-', ''), 10);
+
+    if (activeSlideId === this.items.length - 1) {
+      this.chegouNoUltimoSlide.emit();
+    }
+  }
+}
+
+export interface CarouselItem {
+  type: 'image' | 'video';
+  src: string;
 }

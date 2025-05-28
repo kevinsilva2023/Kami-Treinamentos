@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarouselItem } from './shared/slide-conteudo/slide-conteudo.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cursos-kami-dev';
+
 }
