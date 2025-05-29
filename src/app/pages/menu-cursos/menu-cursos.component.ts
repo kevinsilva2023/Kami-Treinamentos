@@ -15,6 +15,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
   fiscal = 'FISCAL';
   legalizacao = 'LEGALIZAÇÃO';
   geral = 'GERAL'
+  integracao = 'INTEGRAÇÃO'
 
   pesquisa = '';
   categoriaSelecionada: string | null = null; 
@@ -36,6 +37,14 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       subtitulo: 'Capacite-se para atuar no recebimento, conferência e organização de documentos em ambientes administrativos. Desenvolva habilidades para garantir agilidade, precisão e atendimento de qualidade.',
       imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
       direcionamentoCurso: '/cursos/recepcao-de-documentos',
+      desabilitado: false,
+    },
+    {
+      titulo: 'Integração',
+      categoria: this.integracao,
+      subtitulo: '...',
+      imagemCurso: '/assets/background-web.jpg',
+      direcionamentoCurso: '/cursos/integracao',
       desabilitado: false,
     },
   ];

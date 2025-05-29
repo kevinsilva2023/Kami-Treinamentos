@@ -21,6 +21,7 @@ import { BotaoProximoItemComponent } from './shared/botao-proximo-item/botao-pro
 import { SlideConteudoComponent } from './shared/slide-conteudo/slide-conteudo.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { RecepcaoDeDocumentosComponent } from './pages/conteudos/recepcao-de-documentos/recepcao-de-documentos.component';
+import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { RecepcaoDeDocumentosComponent } from './pages/conteudos/recepcao-de-doc
     SlideConteudoComponent,
     ModeloComponent,
     RecepcaoDeDocumentosComponent,
+    IntegracaoComponent,
   ],
   imports: [
     BrowserModule,
