@@ -7,25 +7,37 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './menu-cursos.component.html',
   styleUrls: ['./menu-cursos.component.scss']
 })
-export class MenuCursosComponent implements OnInit, OnDestroy {
 
+
+export class MenuCursosComponent implements OnInit, OnDestroy {
+  
   contabil = 'CONTÁBIL';
   fiscal = 'FISCAL';
   legalizacao = 'LEGALIZAÇÃO';
+  geral = 'GERAL'
 
   pesquisa = '';
-  categoriaSelecionada: string | null = null;  // Inicializa sem filtro
+  categoriaSelecionada: string | null = null; 
+  usuarioLogado = '';
 
-  cursos = [
+  cursos: Curso[] = [
+    {
+      titulo: 'MODELO',
+      categoria: this.geral,
+      subtitulo: 'MODELO',
+      imagemCurso: '/assets/background-web.jpg',
+      direcionamentoCurso: '/cursos/modelo',
+      desabilitado: false,
+      usuariosPermitidos: ['kevin']
+    },
     {
       titulo: 'RECEPÇÃO DE DOCUMENTOS',
       categoria: this.contabil,
       subtitulo: 'Capacite-se para atuar no recebimento, conferência e organização de documentos em ambientes administrativos. Desenvolva habilidades para garantir agilidade, precisão e atendimento de qualidade.',
       imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
-      direcionamentoCurso: '/cursos/atendimento-ao-cliente',
-      desabilitado: false
-    }
-    // Pode adicionar mais cursos aqui
+      direcionamentoCurso: '/cursos/recepcao-de-documentos',
+      desabilitado: false,
+    },
   ];
 
   cursosFiltrados = [...this.cursos];
@@ -34,11 +46,19 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
   private pesquisaSubscription!: Subscription;
 
   ngOnInit() {
+    const usuario = localStorage.getItem('usuarioNome');
+
+    if (usuario) {
+      this.usuarioLogado = usuario.toLowerCase();
+    }
+
     this.pesquisaSubscription = this.pesquisaSubject.pipe(
       debounceTime(500) // aguarda 500ms após o último input
     ).subscribe(() => {
       this.aplicarFiltros();
     });
+
+    this.aplicarFiltros();
   }
 
   ngOnDestroy() {
@@ -81,8 +101,21 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       const correspondePesquisa = pesquisaNormalizada
         ? tituloNormalizado.includes(pesquisaNormalizada)
         : true;
+      
+      const permitidoParaUsuario = !curso.usuariosPermitidos ||
+        curso.usuariosPermitidos.map(u => u.toLowerCase()).includes(this.usuarioLogado);
 
-      return correspondeCategoria && correspondePesquisa;
+      return correspondeCategoria && correspondePesquisa && permitidoParaUsuario;
     });
   }
+}
+
+interface Curso {
+  titulo: string;
+  categoria: string;
+  subtitulo: string;
+  imagemCurso: string;
+  direcionamentoCurso: string;
+  desabilitado: boolean;
+  usuariosPermitidos?: string[]; 
 }

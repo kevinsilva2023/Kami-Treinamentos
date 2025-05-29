@@ -6,6 +6,14 @@
   width: 65vw;
 }
 
+.menu-oculto .custom-carousel,
+.menu-oculto .custom-carousel .carousel-inner,
+.menu-oculto .custom-carousel .carousel-item,
+.menu-oculto .media-wrapper {
+  height: 75vh; /* novo valor */
+  width: 75vw;  /* novo valor */
+}
+
 .custom-carousel {
   display: flex;
   align-items: center;
@@ -48,4 +56,24 @@
   margin-right: 20px;
   border-radius: 50px;
   background-color: #0d2d5498;
+}
+
+.botão_ocultar_menu {
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 2000;
+  background-color: #0b1e3d62;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  color: #0b1e3d;
+  transition: .5s;
+
+  &:hover {
+    background-color: #fff;
+    border: 1px dashed #0b1e3d62;
+  }
+
 }

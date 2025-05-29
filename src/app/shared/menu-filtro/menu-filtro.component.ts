@@ -10,6 +10,7 @@ export class MenuFiltroComponent {
   @Input() categoriaSelecionada: string | null = null;
 
   categorias = [
+    { valor: 'GERAL', label: 'Geral' },
     { valor: 'INTEGRAÇÃO', label: 'Integração' },
     { valor: 'CONTÁBIL', label: 'Contábil' },
     { valor: 'FISCAL', label: 'Fiscal' },

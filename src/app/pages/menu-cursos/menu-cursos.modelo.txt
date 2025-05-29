@@ -1,9 +1,0 @@
-    <div class="row mb-3">
-        <app-card-curso class="col-4"
-            [titulo]="'EM BREVE'"
-            [subtitulo]="'NOVOS CURSOS GERENCER'"
-            [imagemCurso]="'../../../assets/imagens/atendimento-ao-cliente.jpg'"
-            [direcionamentoCurso]="'/'"
-            [desabilitado]="true"
-        ></app-card-curso> 
-    </div>

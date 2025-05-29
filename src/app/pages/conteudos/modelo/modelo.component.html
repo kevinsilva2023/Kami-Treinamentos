@@ -1,0 +1,148 @@
+<div class="d-flex justify-content-center align-items-center p-5 gap-3" style="height: 100vh; width: 100%;">
+
+  <nav ngbNav #nav="ngbNav" class="d-flex card shadow sidebar-scroll position-relative" [class.oculto]="menuOculto" [(activeId)]="activeId">
+    
+    <div class="fw-bolder mb-3 fs-4 titulo-modulo sticky-top" >MÓDULO 1</div>
+
+    <ng-container ngbNavItem="1">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="1" [ngClass]="{ 'ativo': activeId === '1' }">
+            <div class="titulo">MODELO VIDEO</div>
+            <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(1)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <app-video  
+          rotaVideo="..." 
+          (videoFinalizado)="marcarComoConcluido(1)" 
+          id="video1">
+        </app-video>
+        <app-botao-proximo-item 
+          [visivel]="mostrarBotaoProximo" 
+          [autoAvancar]="autoAvancarHabilitado && !autoAvancarExecutado"
+          (avancar)="onBotaoAvancar()">
+        </app-botao-proximo-item>
+      </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="2">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="2" [ngClass]="{ 'ativo': activeId === '2' }">
+          <div class="titulo">MODELO VIDEO/ QUESTIONÁRIO</div>
+          <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(2)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-video 
+            rotaVideo="..."
+            [mostrarBotao]="true" 
+            id="video1">
+          </app-video>
+          <app-questionario 
+            pergunta="Pegunta"
+            acao="acao" 
+            [alternativas]="[
+                'alternativa 1',
+                'alternativa 2',
+                'alternativa 3',
+                'alternativa 4'
+              ]"
+            correta="alternativa 3"
+            [justificativas]="{
+                'alternativa 1':
+                  'justificativa 1',
+                'alternativa 2':
+                  'justificativa 2',
+                'alternativa 3' :
+                  'justificativa 3',
+                'alternativa 4':
+                  'justificativa 4',
+              }" 
+              id="questionario1" 
+              (respostaCorreta)="marcarComoConcluido(2)">
+          </app-questionario>
+        </div>
+        <app-botao-proximo-item 
+          [visivel]="mostrarBotaoProximo" 
+          [autoAvancar]="false"
+          (avancar)="onBotaoAvancar()">
+        </app-botao-proximo-item>
+      </ng-template>
+    </ng-container>
+    
+    <ng-container ngbNavItem="3">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="3" [ngClass]="{ 'ativo': activeId === '3' }">
+            <div class="titulo">MODELO VIDEO/ QUESTIONÁRIO</div>
+            <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(3)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-video 
+            rotaVideo="..."
+            [mostrarBotao]="true">
+          </app-video>
+          <app-questionario
+            pergunta="Pegunta"
+            acao="acao" 
+            [alternativas]="[
+                'alternativa 1',
+                'alternativa 2',
+                'alternativa 3',
+                'alternativa 4'
+              ]"
+            correta="alternativa 3"
+            [justificativas]="{
+                'alternativa 1':
+                  'justificativa 1',
+                'alternativa 2':
+                  'justificativa 2',
+                'alternativa 3' :
+                  'justificativa 3',
+                'alternativa 4':
+                  'justificativa 4',
+              }" 
+              id="questionario2" 
+              (respostaCorreta)="marcarComoConcluido(3)">
+          </app-questionario>
+        </div>
+        <app-botao-proximo-item 
+          [visivel]="mostrarBotaoProximo" 
+          [autoAvancar]="false"
+          (avancar)="onBotaoAvancar()">,
+        </app-botao-proximo-item>
+      </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="4">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="4" [ngClass]="{ 'ativo': activeId === '4' }">
+          <div class="titulo">MODELO SLIDE</div>
+          <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(4)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-slide-conteudo 
+            [items]="carouselItems" 
+            (chegouNoUltimoSlide)="marcarComoConcluido(4)"
+            id="slide-1"
+            (menuToggle)="onMenuToggle($event)">
+          </app-slide-conteudo>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <!-- <div class="fw-bolder mb-3 fs-4 titulo-meio sticky-top" >MÓDULO 2</div> -->
+
+    <div class="fw-bolder fs-4 sticky-bottom"></div>
+  </nav>
+  <div [ngbNavOutlet]="nav" class="flex-grow-1" style="width: 80vw;"></div>
+</div>
+<app-botao-voltar rota="/home"></app-botao-voltar>

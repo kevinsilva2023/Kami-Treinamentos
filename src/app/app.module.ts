@@ -16,10 +16,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuCursosComponent } from './pages/menu-cursos/menu-cursos.component';
 import { LoginComponent } from './pages/login/login.component';
 
-import { AtendimentoAoClienteComponent } from './pages/conteudos/atendimento-ao-cliente/atendimento-ao-cliente.component';
 import { MenuFiltroComponent } from './shared/menu-filtro/menu-filtro.component';
 import { BotaoProximoItemComponent } from './shared/botao-proximo-item/botao-proximo-item.component';
 import { SlideConteudoComponent } from './shared/slide-conteudo/slide-conteudo.component';
+import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
+import { RecepcaoDeDocumentosComponent } from './pages/conteudos/recepcao-de-documentos/recepcao-de-documentos.component';
 
 
 @NgModule({
@@ -27,7 +28,6 @@ import { SlideConteudoComponent } from './shared/slide-conteudo/slide-conteudo.c
     AppComponent,
     HeaderComponent,
     CardCursoComponent,
-    AtendimentoAoClienteComponent,
     HomeComponent,
     MenuCursosComponent,
     LoginComponent,
@@ -38,6 +38,8 @@ import { SlideConteudoComponent } from './shared/slide-conteudo/slide-conteudo.c
     MenuFiltroComponent,
     BotaoProximoItemComponent,
     SlideConteudoComponent,
+    ModeloComponent,
+    RecepcaoDeDocumentosComponent,
   ],
   imports: [
     BrowserModule,
