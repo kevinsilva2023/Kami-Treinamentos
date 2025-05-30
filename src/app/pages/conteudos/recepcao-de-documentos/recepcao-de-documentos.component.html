@@ -181,6 +181,86 @@
         </ng-template>
     </ng-container>
 
+    <ng-container ngbNavItem="6">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="2.2" [ngClass]="{ 'ativo': activeId === '6' }">
+          <div class="titulo">Recepcionando Documentos</div>
+          <div class="descricao">Aprenda se organizar e armazenar da forma correta</div>
+          <i *ngIf="passosConcluidos.includes(6)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+        <ng-template ngbNavContent>
+          <div class="container-scroll" #scrollContainer>
+            <app-slide-conteudo
+              [items]="carouselItems"
+              (chegouNoUltimoSlide)="marcarComoConcluido(6)"
+              id="slide-1"
+              (menuToggle)="onMenuToggle($event)">
+            </app-slide-conteudo>
+          </div>
+        </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="6">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="2.2" [ngClass]="{ 'ativo': activeId === '6' }">
+          <div class="titulo">Recepcionando Documentos</div>
+          <div class="descricao">Aprenda se organizar e armazenar da forma correta</div>
+          <i *ngIf="passosConcluidos.includes(6)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+        <ng-template ngbNavContent>
+          <div class="container-scroll" #scrollContainer>
+            <app-slide-conteudo
+              [items]="carouselItems"
+              (chegouNoUltimoSlide)="marcarComoConcluido(6)"
+              id="slide-1"
+              (menuToggle)="onMenuToggle($event)">
+            </app-slide-conteudo>
+          </div>
+        </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="6">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="2.2" [ngClass]="{ 'ativo': activeId === '6' }">
+          <div class="titulo">Recepcionando Documentos</div>
+          <div class="descricao">Aprenda se organizar e armazenar da forma correta</div>
+          <i *ngIf="passosConcluidos.includes(6)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+        <ng-template ngbNavContent>
+          <div class="container-scroll" #scrollContainer>
+            <app-slide-conteudo
+              [items]="carouselItems"
+              (chegouNoUltimoSlide)="marcarComoConcluido(6)"
+              id="slide-1"
+              (menuToggle)="onMenuToggle($event)">
+            </app-slide-conteudo>
+          </div>
+        </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="6">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="2.2" [ngClass]="{ 'ativo': activeId === '6' }">
+          <div class="titulo">Recepcionando Documentos</div>
+          <div class="descricao">Aprenda se organizar e armazenar da forma correta</div>
+          <i *ngIf="passosConcluidos.includes(6)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+        <ng-template ngbNavContent>
+          <div class="container-scroll" #scrollContainer>
+            <app-slide-conteudo
+              [items]="carouselItems"
+              (chegouNoUltimoSlide)="marcarComoConcluido(6)"
+              id="slide-1"
+              (menuToggle)="onMenuToggle($event)">
+            </app-slide-conteudo>
+          </div>
+        </ng-template>
+    </ng-container>
+
 
     <div class="fw-bolder fs-4 sticky-bottom"></div>
   </nav>
