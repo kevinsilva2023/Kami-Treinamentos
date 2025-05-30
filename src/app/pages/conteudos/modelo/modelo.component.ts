@@ -9,7 +9,7 @@ import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.compo
 export class ModeloComponent {
     private readonly STORAGE_KEY = 'recepcao-de-documentos';
     passosConcluidos: number[] = [];
-    activeId: string = '1';
+    activeId: string = '5';
     mostrarBotaoProximo = false;
     autoAvancarHabilitado = true;
     autoAvancarExecutado = false;

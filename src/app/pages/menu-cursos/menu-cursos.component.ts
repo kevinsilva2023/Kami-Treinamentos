@@ -46,7 +46,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       imagemCurso: '/assets/imagens/integracao/card-img2.png',
       direcionamentoCurso: '/cursos/integracao',
       desabilitado: false,
-    },
+    }
   ];
 
   cursosFiltrados = [...this.cursos];

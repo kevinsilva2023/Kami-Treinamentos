@@ -21,27 +21,29 @@
     </app-menu-filtro>
   
     <div class="d-flex flex-column w-100">
-      <div class="menu-cursos rounded  shadow-lg p-4">
+      <div class="blur sticky-top"></div>
+      <div class="menu-cursos px-3 shadow-lg">
         <div class="cursos">
-          <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row mb-3 align-items-stretch">
+          <div *ngIf="cursosFiltrados.length > 0; else semCursos" class="row">
             <app-card-curso
-              *ngFor="let curso of cursosFiltrados"
-              class="col-3"
-              [titulo]="curso.titulo"
-              [categoria]="curso.categoria"
-              [subtitulo]="curso.subtitulo"
-              [imagemCurso]="curso.imagemCurso"
-              [direcionamentoCurso]="curso.direcionamentoCurso"
-              [desabilitado]="curso.desabilitado">
-            </app-card-curso>
-          </div>
-          <ng-template #semCursos>
-            <div class="text-center text-white py-5">
-              <h5>Nenhum curso encontrado.</h5>
-            </div>
-          </ng-template>
+            *ngFor="let curso of cursosFiltrados"
+            class="col-6 col-xl-4 col-xxl-3 mb-4"
+            [titulo]="curso.titulo"
+            [categoria]="curso.categoria"
+            [subtitulo]="curso.subtitulo"
+            [imagemCurso]="curso.imagemCurso"
+            [direcionamentoCurso]="curso.direcionamentoCurso"
+            [desabilitado]="curso.desabilitado">
+          </app-card-curso>
         </div>
+        <ng-template #semCursos>
+          <div class="text-center text-white py-5">
+            <h5>Nenhum curso encontrado.</h5>
+          </div>
+        </ng-template>
       </div>
+      </div>
+    <div class="blur sticky-bottom"></div>
     </div>
   </div>
 </div>

@@ -29,18 +29,13 @@
     <ng-container ngbNavItem="2">
       <div class="card-button">
         <button ngbNavLink class="botao-sidebar" data-step="2" [ngClass]="{ 'ativo': activeId === '2' }">
-          <div class="titulo">MODELO VIDEO/ QUESTIONÁRIO</div>
+          <div class="titulo">MODELO QUESTIONÁRIO</div>
           <div class="descricao">...</div>
           <i *ngIf="passosConcluidos.includes(2)" class="fa-solid fa-circle-check check-icon"></i>
         </button>
       </div>
       <ng-template ngbNavContent>
         <div class="container-scroll" #scrollContainer>
-          <app-video 
-            rotaVideo="..."
-            [mostrarBotao]="true" 
-            id="video1">
-          </app-video>
           <app-questionario 
             pergunta="Pegunta"
             acao="acao" 
@@ -135,6 +130,21 @@
             id="slide-1"
             (menuToggle)="onMenuToggle($event)">
           </app-slide-conteudo>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="5">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="5" [ngClass]="{ 'ativo': activeId === '5' }">
+          <div class="titulo">MODELO TEXTO</div>
+          <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(5)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-texto-conteudo></app-texto-conteudo>
         </div>
       </ng-template>
     </ng-container>

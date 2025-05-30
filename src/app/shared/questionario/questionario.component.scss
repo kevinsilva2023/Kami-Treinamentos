@@ -1,3 +1,7 @@
+.card {
+  height: 80vh;
+}
+
 .alternativa-hover {
   transition: background-color 0.2s ease-in-out;
 }
@@ -19,7 +23,7 @@
     max-width: 90%;
   }
   h4 {
-    max-width: 70%;
+    max-width: 80%;
   }
 }
 
