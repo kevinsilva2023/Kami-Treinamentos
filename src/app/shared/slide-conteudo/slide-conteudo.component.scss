@@ -4,6 +4,11 @@
 .media-wrapper {
   height: 70vh; 
   width: 65vw;
+
+    
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .menu-oculto .custom-carousel,
@@ -26,6 +31,7 @@
   justify-content: center;
   align-items: center;
   background-color: #000;
+  transform-origin: center center;
 }
 
 .media-wrapper img,
@@ -76,4 +82,45 @@
     border: 1px dashed #0b1e3d62;
   }
 
+}
+
+.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh !important;
+  width: 100vw !important;
+  z-index: 9999;
+  background-color: #000;
+  padding: 0;
+  margin: 0;
+
+
+  transform: scale(1.03);
+  opacity: 1;
+
+}
+
+.fullscreen video,
+.fullscreen img {
+  object-fit: contain !important;
+}
+
+.botao-fechar-fullscreen {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 24px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }

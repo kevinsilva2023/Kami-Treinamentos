@@ -11,7 +11,14 @@
     class="custom-carousel" 
     (slide)="onSlideChange($event)">
     <ng-template ngbSlide *ngFor="let item of items">
-      <div class="media-wrapper">
+      <div  class="media-wrapper"
+            (dblclick)="toggleFullscreen()"
+            [class.fullscreen]="fullscreenAtivo">
+              <button *ngIf="fullscreenAtivo"
+                      class="botao-fechar-fullscreen"
+                      (click)="toggleFullscreen()">
+                <i class="fa-solid fa-circle-xmark"></i>
+              </button>
         <img *ngIf="item.type === 'image'" [src]="item.src" alt="Slide image" />
         <video *ngIf="item.type === 'video'" [src]="item.src" controls></video>
       </div>
