@@ -6,9 +6,11 @@
   </button>
 
   <ngb-carousel
+    #carousel
     [interval]="0"
     [pauseOnHover]="true"
     [showNavigationArrows]="true"
+    [animation]="!fullscreenAtivo"
     class="custom-carousel"
     (slide)="onSlideChange($event)">
     

@@ -73,8 +73,7 @@
     object-fit: cover;
   }
 }
-
-// ===== Fullscreen Mode
+// ===== Modo Fullscreen Corrigido
 .fullscreen {
   position: fixed;
   top: 0;
@@ -82,52 +81,57 @@
   height: 100vh !important;
   width: 100vw !important;
   z-index: 9999;
-  background-color: #000;
+  background-color: #000 !important;
   padding: 0;
   margin: 0;
+  overflow: hidden;
+
+  .carousel-inner,
+  .carousel-item,
+  .media-wrapper {
+    height: 100vh !important;
+    width: 100vw !important;
+    background-color: #000 !important;
+  }
 
   img,
   video {
     object-fit: cover !important;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
 
-// ===== Botão flutuante para fechar fullscreen
-.botao-fechar-fullscreen {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  z-index: 10000;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 24px;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+// ===== Carousel geral (continua igual com um ajuste importante)
+.custom-carousel {
+  display: flex;
+  align-items: center;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+  .carousel-inner,
+  .carousel-item,
+  .media-wrapper {
+    height: 70vh;
+    width: 65vw;
+
+    background-color: #000; // ← Garante fundo mesmo fora do fullscreen
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
-// ===== Controles e indicadores do carousel (estilização nativa do ng-bootstrap)
-::ng-deep ngb-carousel .carousel-indicators {
-  top: 0;
-  bottom: auto;
-  margin-top: 10px;
-  background-color: rgba(13, 45, 84, 0.6);
-  border-radius: 20px;
+// ===== Carousel item (garante que nunca pisque com fundo branco)
+.carousel-item {
+  background-color: #000 !important;
 }
 
-::ng-deep .carousel-control-prev,
-::ng-deep ngb-carousel .carousel-control-next {
-  height: 40px;
-  width: 40px;
-  margin: auto 20px;
-  border-radius: 50%;
-  background-color: rgba(13, 45, 84, 0.6);
+// ===== Estilo para fullscreen no body/html para reforçar
+:fullscreen,
+:-webkit-full-screen,
+:-moz-full-screen {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
 }
