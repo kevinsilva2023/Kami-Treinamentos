@@ -1,24 +1,28 @@
-<div class="card text-dark p-4 rounded shadow-lg d-flex justify-content-center align-items-center w-100 position-relative"
+<div class="card slide-card"
      [class.menu-oculto]="menuOculto">
-  <button class="botão_ocultar_menu" (click)="fecharMenu()">
+  <button class="botao-ocultar-menu" (click)="fecharMenu()">
     <i *ngIf="!menuOculto" class="fa-solid fa-maximize"></i>
     <i *ngIf="menuOculto" class="fa-solid fa-minimize"></i>
   </button>
-  <ngb-carousel 
-    [interval]="0" 
-    [pauseOnHover]="true" 
-    [showNavigationArrows]="true" 
-    class="custom-carousel" 
+
+  <ngb-carousel
+    [interval]="0"
+    [pauseOnHover]="true"
+    [showNavigationArrows]="true"
+    class="custom-carousel"
     (slide)="onSlideChange($event)">
+    
     <ng-template ngbSlide *ngFor="let item of items">
-      <div  class="media-wrapper"
-            (dblclick)="toggleFullscreen()"
-            [class.fullscreen]="fullscreenAtivo">
-              <button *ngIf="fullscreenAtivo"
-                      class="botao-fechar-fullscreen"
-                      (click)="toggleFullscreen()">
-                <i class="fa-solid fa-circle-xmark"></i>
-              </button>
+      <div class="media-wrapper"
+           [class.fullscreen]="fullscreenAtivo"
+           (dblclick)="toggleFullscreen()">
+
+        <button *ngIf="fullscreenAtivo"
+                class="botao-fechar-fullscreen"
+                (click)="toggleFullscreen()">
+          <i class="fa-solid fa-circle-xmark"></i>
+        </button>
+
         <img *ngIf="item.type === 'image'" [src]="item.src" alt="Slide image" />
         <video *ngIf="item.type === 'video'" [src]="item.src" controls></video>
       </div>

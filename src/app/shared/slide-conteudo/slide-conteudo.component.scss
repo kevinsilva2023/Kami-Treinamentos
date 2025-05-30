@@ -1,89 +1,80 @@
-.custom-carousel,
-.custom-carousel .carousel-inner,
-.custom-carousel .carousel-item,
-.media-wrapper {
-  height: 70vh; 
-  width: 65vw;
-
-    
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.menu-oculto .custom-carousel,
-.menu-oculto .custom-carousel .carousel-inner,
-.menu-oculto .custom-carousel .carousel-item,
-.menu-oculto .media-wrapper {
-  height: 75vh; /* novo valor */
-  width: 75vw;  /* novo valor */
-}
-
-.custom-carousel {
-  display: flex;
-  align-items: center;
-}
-
-.media-wrapper {
-  width: 100%;
-  overflow: hidden;
+// ===== Container principal
+.slide-card {
+  height: 80vh;
+  padding: 1.5rem;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
-  transform-origin: center center;
-}
-
-.media-wrapper img,
-.media-wrapper video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.card {
-    height: 80vh;
+
+  &.menu-oculto {
+    .custom-carousel,
+    .carousel-inner,
+    .carousel-item,
+    .media-wrapper {
+      height: 75vh;
+      width: 75vw;
+    }
+  }
 }
 
-::ng-deep ngb-carousel .carousel-indicators {
-  top: 0;
-  bottom: auto;        
-  margin-top: 10px;   
-  background-color: #0d2d5498;
-  border-radius: 20px;
-}
-
-::ng-deep  .carousel-control-prev,  
-::ng-deep ngb-carousel .carousel-control-next{
-  height: 40px;
-  width: 40px;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 20px;
-  margin-right: 20px;
-  border-radius: 50px;
-  background-color: #0d2d5498;
-}
-
-.botão_ocultar_menu {
-  height: 35px;
-  width: 35px;
+// ===== Ocultar Menu
+.botao-ocultar-menu {
   position: absolute;
   top: 15px;
   right: 15px;
+  height: 35px;
+  width: 35px;
   z-index: 2000;
-  background-color: #0b1e3d62;
   border: 1px solid transparent;
-  border-radius: 50px;
+  border-radius: 50%;
+  background-color: rgba(11, 30, 61, 0.38);
   color: #0b1e3d;
-  transition: .5s;
+  transition: 0.5s;
 
   &:hover {
     background-color: #fff;
-    border: 1px dashed #0b1e3d62;
+    border: 1px dashed rgba(11, 30, 61, 0.38);
   }
-
 }
 
+// ===== Carrossel
+.custom-carousel {
+  display: flex;
+  align-items: center;
+
+  .carousel-inner,
+  .carousel-item,
+  .media-wrapper {
+    height: 70vh;
+    width: 65vw;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// ===== Mídia (imagem/vídeo)
+.media-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000;
+  width: 100%;
+  transform-origin: center center;
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// ===== Fullscreen Mode
 .fullscreen {
   position: fixed;
   top: 0;
@@ -95,17 +86,15 @@
   padding: 0;
   margin: 0;
 
-
-  transform: scale(1.03);
-  opacity: 1;
-
+  img,
+  video {
+    object-fit: cover !important;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-.fullscreen video,
-.fullscreen img {
-  object-fit: contain !important;
-}
-
+// ===== Botão flutuante para fechar fullscreen
 .botao-fechar-fullscreen {
   position: absolute;
   top: 40px;
@@ -113,8 +102,8 @@
   z-index: 10000;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
-  border-radius: 50px;
-  color: white;
+  border-radius: 50%;
+  color: #fff;
   font-size: 24px;
   padding: 6px 12px;
   cursor: pointer;
@@ -123,4 +112,22 @@
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);
   }
+}
+
+// ===== Controles e indicadores do carousel (estilização nativa do ng-bootstrap)
+::ng-deep ngb-carousel .carousel-indicators {
+  top: 0;
+  bottom: auto;
+  margin-top: 10px;
+  background-color: rgba(13, 45, 84, 0.6);
+  border-radius: 20px;
+}
+
+::ng-deep .carousel-control-prev,
+::ng-deep ngb-carousel .carousel-control-next {
+  height: 40px;
+  width: 40px;
+  margin: auto 20px;
+  border-radius: 50%;
+  background-color: rgba(13, 45, 84, 0.6);
 }
