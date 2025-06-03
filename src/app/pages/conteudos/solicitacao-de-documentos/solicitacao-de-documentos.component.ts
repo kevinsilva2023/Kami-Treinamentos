@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.component';
 
 @Component({
-  selector: 'app-modelo',
-  templateUrl: './modelo.component.html',
-  styleUrls: ['./modelo.component.scss']
+  selector: 'app-solicitacao-de-documentos',
+  templateUrl: './solicitacao-de-documentos.component.html',
+  styleUrls: ['../modelo/modelo.component.scss']  
 })
-export class ModeloComponent {
-    private readonly STORAGE_KEY = 'recepcao-de-documentos';
+export class SolicitacaoDeDocumentosComponent {
+    private readonly STORAGE_KEY = 'solicitacao-de-documentos';
     passosConcluidos: number[] = [];
     activeId: string = '1';
     mostrarBotaoProximo = false;
@@ -16,8 +16,18 @@ export class ModeloComponent {
     menuOculto = false;
   
       carouselItems: CarouselItem[] = [
-        { type: 'video', src: '...' },
-        { type: 'image', src: '...' },
+        { type: 'image', src: '/assets/imagens/solicitacao/1.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/2.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/3.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/4.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/5.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/6.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/7.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/8.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/9.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/10.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/11.png' },
+        { type: 'image', src: '/assets/imagens/solicitacao/12.png' },
       ];
       
   
@@ -55,5 +65,4 @@ export class ModeloComponent {
     onMenuToggle(novoValor: boolean) {
       this.menuOculto = novoValor;
     }
-
 }

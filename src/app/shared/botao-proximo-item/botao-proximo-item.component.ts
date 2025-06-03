@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnDes
 })
 export class BotaoProximoItemComponent implements OnChanges, OnDestroy {
   @Input() visivel = false;
-  @Input() autoAvancar = false;  // Controla se pode auto avançar (vem do pai)
+  @Input() autoAvancar = false;
   @Output() avancar = new EventEmitter<void>();
 
   progress = 0;
@@ -15,12 +15,12 @@ export class BotaoProximoItemComponent implements OnChanges, OnDestroy {
   private readonly tempoTotal = 5000;
   private readonly intervalo = 50;
 
-  private autoAvancarExecutadoLocal = false; // Flag local para controlar 1 vez por exibição
+  private autoAvancarExecutadoLocal = false;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['visivel']) {
       if (this.visivel) {
-        this.autoAvancarExecutadoLocal = false; // reset local ao aparecer
+        this.autoAvancarExecutadoLocal = false;
       } else {
         this.limparContagem();
         this.progress = 0;

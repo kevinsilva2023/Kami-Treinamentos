@@ -18,7 +18,7 @@ export class QuestionarioComponent {
   resposta: boolean | null = null;
   justificativa: string = '';
   alternativaSelecionada: string | null = null;
-  bloqueado: boolean = false
+  bloqueado = false
 
 
   ngOnInit(): void {

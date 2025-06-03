@@ -23,6 +23,7 @@ import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { RecepcaoDeDocumentosComponent } from './pages/conteudos/recepcao-de-documentos/recepcao-de-documentos.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 import { TextoConteudoComponent } from './shared/texto-conteudo/texto-conteudo.component';
+import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { TextoConteudoComponent } from './shared/texto-conteudo/texto-conteudo.c
     RecepcaoDeDocumentosComponent,
     IntegracaoComponent,
     TextoConteudoComponent,
+    SolicitacaoDeDocumentosComponent,
   ],
   imports: [
     BrowserModule,

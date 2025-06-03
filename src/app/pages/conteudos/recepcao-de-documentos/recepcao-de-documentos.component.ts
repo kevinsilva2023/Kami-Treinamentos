@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, Renderer2, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.component';
 
 @Component({

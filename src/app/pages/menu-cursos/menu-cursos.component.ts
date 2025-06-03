@@ -46,7 +46,15 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       imagemCurso: '/assets/imagens/integracao/card-img2.png',
       direcionamentoCurso: '/cursos/integracao',
       desabilitado: false,
-    }
+    },
+    {
+      titulo: 'SOLICITAÇÃO DE DOCUMENTOS',
+      categoria: this.contabil,
+      subtitulo: 'EM BREVE',
+      imagemCurso: '/assets/background-web.jpg',
+      direcionamentoCurso: '/cursos/solicitacao-de-documentos',
+      desabilitado: false,
+    },
   ];
 
   cursosFiltrados = [...this.cursos];
@@ -62,7 +70,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
     }
 
     this.pesquisaSubscription = this.pesquisaSubject.pipe(
-      debounceTime(500) // aguarda 500ms após o último input
+      debounceTime(500)
     ).subscribe(() => {
       this.aplicarFiltros();
     });
@@ -74,7 +82,6 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
     this.pesquisaSubscription.unsubscribe();
   }
 
-  // Método para receber o filtro emitido pelo MenuFiltroComponent
   onFiltroMudou(filtro: string) {
     if (filtro === 'remover') {
       this.categoriaSelecionada = null;
@@ -84,7 +91,6 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
     this.aplicarFiltros();
   }
 
-  // Essa função vai ser chamada pelo input via ngModelChange
   pesquisaMudou() {
     this.pesquisaSubject.next(this.pesquisa);
   }

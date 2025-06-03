@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class BotaoVerMaisComponent {
 
-  @Input() visivel: boolean = false; // padrão: escondido
+  @Input() visivel = false; 
 
   rolarParaBaixo() {
     const container = document.querySelector('.container-scroll');
