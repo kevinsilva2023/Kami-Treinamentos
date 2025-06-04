@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.component';
 
 @Component({
-  selector: 'app-recepcao-de-documentos',
-  templateUrl: './recepcao-de-documentos.component.html',
+  selector: 'app-solicitacao-de-documentos',
+  templateUrl: './solicitacao-de-documentos.html',
   styleUrls: ['../modelo/modelo.component.scss']
 })
-export class RecepcaoDeDocumentosComponent {
+export class SolicitacaoDeDocumentosComponent {
 
   private readonly STORAGE_KEY = 'recepcao-de-documentos';
   passosConcluidos: number[] = [];

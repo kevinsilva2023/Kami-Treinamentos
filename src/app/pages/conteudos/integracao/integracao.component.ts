@@ -20,9 +20,6 @@ export class IntegracaoComponent {
         { type: 'image', src: '/assets/imagens/integracao/Slide2.jpg' },
         { type: 'image', src: '/assets/imagens/integracao/Slide3.jpg' },
         { type: 'image', src: '/assets/imagens/integracao/Slide4.jpg' },
-        { type: 'image', src: '/assets/imagens/integracao/Slide5.jpg' },
-        { type: 'image', src: '/assets/imagens/integracao/Slide6.jpg' },
-        { type: 'image', src: '/assets/imagens/integracao/Slide7.jpg' },
         { type: 'image', src: '/assets/imagens/integracao/Slide8.jpg' },
         { type: 'image', src: '/assets/imagens/integracao/Slide9.jpg' },
       ];

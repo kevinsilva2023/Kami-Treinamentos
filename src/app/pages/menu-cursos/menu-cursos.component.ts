@@ -32,21 +32,21 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       usuariosPermitidos: ['kevin']
     },
     {
-      titulo: 'RECEPÇÃO DE DOCUMENTOS',
-      categoria: this.contabil,
-      subtitulo: 'Capacite-se para atuar no recebimento, conferência e organização de documentos em ambientes administrativos. Desenvolva habilidades para garantir agilidade, precisão e atendimento de qualidade.',
-      imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
-      direcionamentoCurso: '/cursos/recepcao-de-documentos',
-      desabilitado: false,
-    },
-    {
       titulo: 'Integração',
       categoria: this.integracao,
       subtitulo: 'Mais que um começo, este é o ponto de partida para transformar talento em resultados extraordinários!',
       imagemCurso: '/assets/imagens/integracao/card-img2.png',
       direcionamentoCurso: '/cursos/integracao',
       desabilitado: false,
-    }
+    },
+    {
+      titulo: 'SOLICITAÇÃO DE DOCUMENTOS',
+      categoria: this.contabil,
+      subtitulo: 'Capacite-se para atuar no recebimento, conferência e organização de documentos em ambientes administrativos. Desenvolva habilidades para garantir agilidade, precisão e atendimento de qualidade.',
+      imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
+      direcionamentoCurso: '/cursos/solicitacao-de-documentos',
+      desabilitado: false,
+    },
   ];
 
   cursosFiltrados = [...this.cursos];

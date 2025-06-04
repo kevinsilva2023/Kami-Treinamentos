@@ -20,8 +20,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MenuCursosComponent } from './pages/menu-cursos/menu-cursos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
-import { RecepcaoDeDocumentosComponent } from './pages/conteudos/recepcao-de-documentos/recepcao-de-documentos.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
+import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos';
 
 
 @NgModule({
@@ -40,7 +40,7 @@ import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.com
     BotaoProximoItemComponent,
     SlideConteudoComponent,
     ModeloComponent,
-    RecepcaoDeDocumentosComponent,
+    SolicitacaoDeDocumentosComponent,
     IntegracaoComponent,
     TextoConteudoComponent,
   ],
