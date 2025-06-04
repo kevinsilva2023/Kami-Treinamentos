@@ -17,8 +17,18 @@ export class RecepcaoDeDocumentosComponent {
   menuOculto = false;
 
   carouselItems: CarouselItem[] = [
-    { type: 'video', src: '../../../assets/videos/atendimento-ao-cliente/criando-relacionamento.mp4' },
-    { type: 'image', src: '../../../assets/imagens/atendimento-ao-cliente.jpg' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/1.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/2.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/3.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/4.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/5.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/6.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/7.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/8.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/9.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/10.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/11.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/12.png' },
   ];
 
   ngOnInit() {

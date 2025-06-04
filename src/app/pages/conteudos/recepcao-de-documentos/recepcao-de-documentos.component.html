@@ -169,16 +169,16 @@
           <i *ngIf="passosConcluidos.includes(6)" class="fa-solid fa-circle-check check-icon"></i>
         </button>
       </div>
-        <ng-template ngbNavContent>
-          <div class="container-scroll" #scrollContainer>
-            <app-slide-conteudo
-              [items]="carouselItems"
-              (chegouNoUltimoSlide)="marcarComoConcluido(6)"
-              id="slide-1"
-              (menuToggle)="onMenuToggle($event)">
-            </app-slide-conteudo>
-          </div>
-        </ng-template>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-slide-conteudo 
+            [items]="carouselItems" 
+            (chegouNoUltimoSlide)="marcarComoConcluido(6)"
+            id="slide-1"
+            (menuToggle)="onMenuToggle($event)">
+          </app-slide-conteudo>
+        </div>
+      </ng-template>
     </ng-container>
 
 

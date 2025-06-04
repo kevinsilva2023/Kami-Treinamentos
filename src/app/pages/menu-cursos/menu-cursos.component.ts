@@ -46,15 +46,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       imagemCurso: '/assets/imagens/integracao/card-img2.png',
       direcionamentoCurso: '/cursos/integracao',
       desabilitado: false,
-    },
-    {
-      titulo: 'SOLICITAÇÃO DE DOCUMENTOS',
-      categoria: this.contabil,
-      subtitulo: 'EM BREVE',
-      imagemCurso: '/assets/background-web.jpg',
-      direcionamentoCurso: '/cursos/solicitacao-de-documentos',
-      desabilitado: false,
-    },
+    }
   ];
 
   cursosFiltrados = [...this.cursos];
