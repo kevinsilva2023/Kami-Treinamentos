@@ -157,3 +157,10 @@
     }
 }
 
+::ng-deep ngb-carousel .carousel-indicators {
+  top: 0;
+  bottom: auto;
+  margin-top: 10px;
+  background-color: rgba(13, 45, 84, 0.6);
+  border-radius: 20px;
+}
