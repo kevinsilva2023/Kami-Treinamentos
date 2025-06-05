@@ -11,8 +11,9 @@
     [pauseOnHover]="true"
     [showNavigationArrows]="true"
     [animation]="!fullscreenAtivo"
-    class="custom-carousel"
-    (slide)="onSlideChange($event)">
+    [wrap]="false"
+    class="custom-carousel" 
+    (slid)="onSlideChange($event)">
     
     <ng-template ngbSlide *ngFor="let item of items">
       <div class="media-wrapper"

@@ -36,7 +36,7 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
 
   handleKeyDown = (event: KeyboardEvent): void => {
     if (this.fullscreenAtivo && (event.key === 'Escape' || event.key === 'F11')) {
-      this.toggleFullscreen();
+      this.toggleFullscreen(); 
     }
   };
 
@@ -51,12 +51,6 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
     if (activeSlideId === this.items.length - 1) {
       localStorage.setItem(`${this.id}`, 'true');
       this.chegouNoUltimoSlide.emit();
-
-      // Se estiver em fullscreen, sai automaticamente
-      if (this.fullscreenAtivo && document.fullscreenElement) {
-        document.exitFullscreen();
-        this.fullscreenAtivo = false;
-      }
     }
   }
 

@@ -9,6 +9,7 @@
   width: 100%;
 
   &.menu-oculto {
+
     .custom-carousel,
     .carousel-inner,
     .carousel-item,
@@ -73,6 +74,7 @@
     object-fit: cover;
   }
 }
+
 // ===== Modo Fullscreen Corrigido
 .fullscreen {
   position: fixed;
@@ -150,11 +152,11 @@
   transition: .5s;
   font-size: 30px;
 
-    &:hover {
-      background-color: #0b1e3d;
-      border: 1px dashed #f9f9f9;
-      color: #f9f9f9;
-    }
+  &:hover {
+    background-color: #0b1e3d;
+    border: 1px dashed #f9f9f9;
+    color: #f9f9f9;
+  }
 }
 
 ::ng-deep ngb-carousel .carousel-indicators {
