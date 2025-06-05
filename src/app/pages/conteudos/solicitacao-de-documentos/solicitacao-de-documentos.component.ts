@@ -3,7 +3,7 @@ import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.compo
 
 @Component({
   selector: 'app-solicitacao-de-documentos',
-  templateUrl: './solicitacao-de-documentos.html',
+  templateUrl: './solicitacao-de-documentos.component.html',
   styleUrls: ['../modelo/modelo.component.scss']
 })
 export class SolicitacaoDeDocumentosComponent {
@@ -29,6 +29,9 @@ export class SolicitacaoDeDocumentosComponent {
     { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/10.png' },
     { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/11.png' },
     { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/12.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/13.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/14.png' },
+    { type: 'image', src: '../../../assets/imagens/recepcao-de-documentos/15.png' },
   ];
 
   ngOnInit() {

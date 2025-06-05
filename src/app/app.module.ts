@@ -21,7 +21,7 @@ import { MenuCursosComponent } from './pages/menu-cursos/menu-cursos.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
-import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos';
+import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
 
 
 @NgModule({
