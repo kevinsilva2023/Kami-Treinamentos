@@ -58,6 +58,15 @@ export class SolicitacaoDeDocumentosComponent {
     this.autoAvancarExecutado = false;
   }
 
+  private jaMarcado = false;
+
+  ngDoCheck() {
+    if (!this.jaMarcado && this.activeId === '7') {
+      this.marcarComoConcluido(7);
+      this.jaMarcado = true;
+    }
+  }
+
   onBotaoAvancar() {
     this.irParaProximoPasso();
     if (this.autoAvancarHabilitado && !this.autoAvancarExecutado) {

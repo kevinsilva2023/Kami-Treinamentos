@@ -184,12 +184,17 @@
             (menuToggle)="onMenuToggle($event)">
           </app-slide-conteudo>
         </div>
+        <app-botao-proximo-item 
+          [visivel]="mostrarBotaoProximo"
+          [autoAvancar]="false"
+          (avancar)="onBotaoAvancar()">
+        </app-botao-proximo-item>
       </ng-template>
     </ng-container>
 
     <ng-container ngbNavItem="7">
       <div class="card-button">
-        <button ngbNavLink class="botao-sidebar" data-step="2.3" [ngClass]="{ 'ativo': activeId === '7' }">
+        <button ngbNavLink class="botao-sidebar" data-step="2.3" [ngClass]="{ 'ativo': activeId === '7' }" (click)="marcarComoConcluido(7)">
           <div class="titulo">Email Cobrança de Documentos</div>
           <div class="descricao">Use esse modelo para cobrar os documentos da forma correta.</div>
           <i *ngIf="passosConcluidos.includes(7)" class="fa-solid fa-circle-check check-icon"></i>
@@ -201,7 +206,6 @@
         </div>
       </ng-template>
     </ng-container>
-
 
     <div class="fw-bolder fs-4 sticky-bottom"></div>
   </nav>
