@@ -5,14 +5,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cursos/modelo', component: ModeloComponent },
-  { path: 'cursos/solicitacao-de-documentos', component: SolicitacaoDeDocumentosComponent },
-  { path: 'cursos/integracao', component: IntegracaoComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'cursos/modelo', component: ModeloComponent, canActivate: [AuthGuard] },
+  { path: 'cursos/solicitacao-de-documentos', component: SolicitacaoDeDocumentosComponent, canActivate: [AuthGuard] },
+  { path: 'cursos/integracao', component: IntegracaoComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

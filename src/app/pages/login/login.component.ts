@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   nome = '';
   senha = ''; 
   tentouEntrar = false;
@@ -20,13 +20,6 @@ export class LoginComponent implements OnInit {
     
     if (this.nome.trim() && this.senha === 'adm') {
       localStorage.setItem('usuarioNome', this.nome);
-      this.router.navigate(['/home']);
-    }
-  }
-  
-  ngOnInit() {
-    const nomeSalvo = localStorage.getItem('usuarioNome');
-    if (nomeSalvo) {
       this.router.navigate(['/home']);
     }
   }
