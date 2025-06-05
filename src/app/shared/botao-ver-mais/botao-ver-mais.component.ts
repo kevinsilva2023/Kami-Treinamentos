@@ -14,6 +14,6 @@ export class BotaoVerMaisComponent {
     if (container) {
       container.scrollBy({ top: 1000, behavior: 'smooth' });
     }
-    }
+  }
 
 }

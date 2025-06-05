@@ -1,0 +1,57 @@
+.card {
+    height: 80vh;
+}
+
+.content {
+    background-color: lightgray;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.texto {
+    // background-color: red;
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 16px;
+
+    max-height: 100%;
+    /* ou ajuste conforme necessário */
+    overflow-y: auto;
+    white-space: pre-wrap;
+    /* Quebra as linhas automaticamente */
+    word-break: break-word;
+
+    &::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari e Edge Chromium */
+    }
+}
+
+.content_botao_copiar {
+    width: 90%;
+    // background-color: darkgray;
+    margin-top: 16px;
+    justify-content: end;
+    display: flex;
+
+    .botao_copiar {
+        background-color: white;
+        border: 1px solid #0D2D54;
+        color: #0d2d54;
+        font-weight: bolder;
+        border-radius: 10px;
+        padding: 5px 10px;
+        transition: 1s;
+
+        &:hover {
+            background-color: #0d2d54;
+            color: white;
+            cursor: pointer;
+            border: 1px solid #f9f9f9;
+        }
+    }
+}

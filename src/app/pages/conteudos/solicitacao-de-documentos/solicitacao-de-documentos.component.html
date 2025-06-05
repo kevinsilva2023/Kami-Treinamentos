@@ -46,8 +46,11 @@
         <app-video rotaVideo="../../../../assets/videos/recepcao-de-documentos/criando-relacionamento.mp4"
           (videoFinalizado)="marcarComoConcluido(2)" id="video2"></app-video>
 
-        <app-botao-proximo-item [visivel]="mostrarBotaoProximo" [autoAvancar]="false"
-          (avancar)="onBotaoAvancar()"></app-botao-proximo-item>
+        <app-botao-proximo-item 
+          [visivel]="mostrarBotaoProximo" 
+          [autoAvancar]="false"
+          (avancar)="onBotaoAvancar()">
+        </app-botao-proximo-item>
       </ng-template>
     </ng-container>
 
@@ -63,8 +66,10 @@
       </div>
       <ng-template ngbNavContent>
         <div class="container-scroll" #scrollContainer>
-          <app-video rotaVideo="../../../../assets/videos/recepcao-de-documentos/questionario1.mp4"
-            [mostrarBotao]="true" id="video3">
+          <app-video 
+            rotaVideo="../../../../assets/videos/recepcao-de-documentos/questionario1.mp4"
+            [mostrarBotao]="true" 
+            id="video3">
           </app-video>
           <app-questionario pergunta="Oi, gente! Já chegou a hora de mandar aqueles documentos temidos de novo? 😅"
             acao="Como você responderia? Escolha a melhor opção abaixo:" [alternativas]="[
@@ -86,7 +91,8 @@
               }" id="questionario1" (respostaCorreta)="marcarComoConcluido(3)">
           </app-questionario>
         </div>
-        <app-botao-proximo-item [visivel]="mostrarBotaoProximo" [autoAvancar]="false"
+        <app-botao-proximo-item 
+          [visivel]="mostrarBotaoProximo" [autoAvancar]="false"
           (avancar)="onBotaoAvancar()"></app-botao-proximo-item>
       </ng-template>
     </ng-container>
@@ -177,6 +183,21 @@
             id="slide-1"
             (menuToggle)="onMenuToggle($event)">
           </app-slide-conteudo>
+        </div>
+      </ng-template>
+    </ng-container>
+
+    <ng-container ngbNavItem="7">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="2.3" [ngClass]="{ 'ativo': activeId === '7' }">
+          <div class="titulo">Email Cobrança de Documentos</div>
+          <div class="descricao">Use esse modelo para cobrar os documentos da forma correta.</div>
+          <i *ngIf="passosConcluidos.includes(7)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-modelo-email></app-modelo-email>
         </div>
       </ng-template>
     </ng-container>

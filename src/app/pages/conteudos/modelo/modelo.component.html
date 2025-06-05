@@ -149,6 +149,21 @@
       </ng-template>
     </ng-container>
 
+    <ng-container ngbNavItem="6">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="6" [ngClass]="{ 'ativo': activeId === '6' }">
+          <div class="titulo">MODELO EMAIL</div>
+          <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(6)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-modelo-email></app-modelo-email>
+        </div>
+      </ng-template>
+    </ng-container>
+
     <!-- <div class="fw-bolder mb-3 fs-4 titulo-meio sticky-top" >MÓDULO 2</div> -->
 
     <div class="fw-bolder fs-4 sticky-bottom"></div>

@@ -22,7 +22,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
-
+import { ModeloEmailComponent } from './shared/modelo-email/modelo-email.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +43,7 @@ import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-
     SolicitacaoDeDocumentosComponent,
     IntegracaoComponent,
     TextoConteudoComponent,
+    ModeloEmailComponent,
   ],
   imports: [
     BrowserModule,
