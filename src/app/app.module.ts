@@ -15,6 +15,7 @@ import { TextoConteudoComponent } from './shared/texto-conteudo/texto-conteudo.c
 import { MenuFiltroComponent } from './shared/menu-filtro/menu-filtro.component';
 import { BotaoProximoItemComponent } from './shared/botao-proximo-item/botao-proximo-item.component';
 import { SlideConteudoComponent } from './shared/slide-conteudo/slide-conteudo.component';
+import { ModeloEmailComponent } from './shared/modelo-email/modelo-email.component';
 
 import { HomeComponent } from './pages/home/home.component';
 import { MenuCursosComponent } from './pages/menu-cursos/menu-cursos.component';
@@ -22,7 +23,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
-import { ModeloEmailComponent } from './shared/modelo-email/modelo-email.component';
+import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { ModeloEmailComponent } from './shared/modelo-email/modelo-email.compone
     IntegracaoComponent,
     TextoConteudoComponent,
     ModeloEmailComponent,
+    KamitogetherComponent,
   ],
   imports: [
     BrowserModule,

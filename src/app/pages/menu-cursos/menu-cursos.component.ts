@@ -32,7 +32,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       usuariosPermitidos: ['kevin']
     },
     {
-      titulo: 'Integração',
+      titulo: 'INTEGRAÇÃO',
       categoria: this.integracao,
       subtitulo: 'Mais que um começo, este é o ponto de partida para transformar talento em resultados extraordinários!',
       imagemCurso: '/assets/imagens/integracao/card-img2.png',
@@ -46,6 +46,24 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       imagemCurso: '/assets/imagens/atendimento-ao-cliente.png',
       direcionamentoCurso: '/cursos/solicitacao-de-documentos',
       desabilitado: false,
+    },
+    {
+      titulo: 'KAMITOGETHER',
+      categoria: this.geral,
+      subtitulo: 'Aprenda todas funcionalidades e processos da nossa melhor plataforma de automações.',
+      imagemCurso: '/assets/background-web.jpg',
+      direcionamentoCurso: '/cursos/kamitogether',
+      desabilitado: false,
+      usuariosPermitidos: ['kevin', 'kevin silva', 'daniel']
+    },
+    {
+      titulo: 'teste',
+      categoria: this.geral,
+      subtitulo: 'teste',
+      imagemCurso: '/assets/background-web.jpg',
+      direcionamentoCurso: '/cursos/teste',
+      desabilitado: false,
+      usuariosPermitidos: ['kevin', 'kevin silva', 'daniel']
     },
   ];
 

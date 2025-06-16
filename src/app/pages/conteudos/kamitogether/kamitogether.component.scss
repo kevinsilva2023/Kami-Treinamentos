@@ -1,0 +1,136 @@
+.content { 
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/assets/background-web.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    // opacity: 0.8;
+
+    .curso {
+        width: 90vw;
+        height: 90vh;
+        display: flex;
+        gap: 20px;
+
+        .menu_lateral_curso {
+            background-color: rgba(211, 211, 211, 0.171);
+            border: 1px solid white;
+            border-radius: 10px;
+            height: 100%;
+            width: 25%;
+            padding: 20px;
+
+            .botao_abrir_curso {
+                width: 100%;
+                padding: 5px 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: #0D1E3D;
+                color: #fff;
+                text-transform: uppercase;
+                text-align: left;
+                font-weight: bold;
+                transition: 0.5s ease;
+
+                &:hover {
+                    background-color: #0C1E3D5D;
+                    color: #0D1E3D;
+                }
+            }
+
+            .botao_menu_lateral {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100% ;
+                padding-left: 35px;
+                border: 2px solid #0D1E3D;
+                border-radius: 10px;
+                margin-bottom: 16px;
+                transition: 0.2s ease;
+
+                &:hover { background-color: #0C1E3D5D; }
+
+                &::before {
+                    content: attr(data-step);
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    left: -17px;
+                    top: 25%;
+                    font-size: 14px;
+                    font-weight: bold;
+                    background-color: #fff;
+                    color: #0D1E3D;
+                    border: 2px solid #0D1E3D;
+                    border-radius: 50%;
+                }
+                
+                &::after {
+                    content: ''; 
+                    position: absolute;
+                    left: 20px;
+                    top: 8px;
+                    bottom: 8px;
+                    width: 2px;
+                    border-left: 2px dashed #0D1E3D;
+                }
+
+                .titulo_botao_menu_lateral {
+                    font-weight: bold;
+                    color: #000;
+                    max-width: 95%;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
+                
+                .descricao_botao_menu_lateral {
+                    font-weight: normal;
+                    color: #555;
+                    overflow: hidden;
+                }
+            }
+
+            .botoes_expandir{
+                display: flex;
+                justify-content: end;
+                gap: 10px;
+                margin-top: 10px;
+
+                button {
+                    font-size: 12px;
+                    border-radius: 5px;
+                    padding: 5px 10px;
+                    text-align: center;
+                    border: none;
+                    background-color: #0D1E3D;
+                    color: #fff;
+                    transition: 0.5s ease;
+
+                    &:hover {
+                        background-color: #0C1E3D5D;
+                    }
+                }
+            }
+        }
+
+        .conteudo_curso {
+            background-color: rgba(211, 211, 211, 0.171);
+            border: 1px solid white;
+            border-radius: 10px;
+            height: 100%;
+            width: 75%;
+        }
+    }
+}
+
