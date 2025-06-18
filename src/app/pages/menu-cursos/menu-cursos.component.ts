@@ -29,7 +29,7 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       imagemCurso: '/assets/background-web.jpg',
       direcionamentoCurso: '/cursos/modelo',
       desabilitado: false,
-      usuariosPermitidos: ['kevin']
+      usuariosPermitidos: ['kevin', 'daniel']
     },
     {
       titulo: 'INTEGRAÇÃO',

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   nomeUsuario = '';
   podeLimpar = false;
-  usuariosAutorizados = ['kevin', 'kevin silva'];
+  usuariosAutorizados = ['kevin', 'kevin silva', 'daniel'];
 
   constructor(private router: Router) {}
 
