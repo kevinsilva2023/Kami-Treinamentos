@@ -6,11 +6,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-image: url('/assets/background-web.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     // opacity: 0.8;
+
+    .container_botao_voltar {
+        width: 90vw;
+        margin-bottom: 10px;
+    
+        button {
+            padding: 10px 30px;
+            border-radius: 20px;
+            background-color: #0b1e3d62;
+            border: none;
+            color: lightgray;
+            font-weight: bolder;
+            border: 1px solid #fff;
+            transition:  0.5s;
+
+                &:hover {
+                    background-color: #0B1E3D;
+                    color: #FFF
+                }
+        }
+    }
 
     .curso {
         width: 90vw;
