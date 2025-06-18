@@ -24,6 +24,7 @@ import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
+import { TesteComponent } from './pages/conteudos/teste/teste.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogeth
     TextoConteudoComponent,
     ModeloEmailComponent,
     KamitogetherComponent,
+    TesteComponent,
   ],
   imports: [
     BrowserModule,

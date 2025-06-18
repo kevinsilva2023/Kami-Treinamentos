@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center align-items-center p-5 gap-3" style="height: 100vh; width: 100%;">
+  <nav ngbNav #nav="ngbNav" class="d-flex card shadow sidebar-scroll position-relative" [(activeId)]="activeId">
+    <div class="fw-bolder mb-3 fs-4 titulo-modulo sticky-top" >MÓDULO 1</div>
+
+    <ng-container ngbNavItem="1">
+      <div class="card-button">
+        <button ngbNavLink class="botao-sidebar" data-step="1" [ngClass]="{ 'ativo': activeId === '1' }">
+          <div class="titulo">MODELO SLIDE</div>
+          <div class="descricao">...</div>
+          <i *ngIf="passosConcluidos.includes(1)" class="fa-solid fa-circle-check check-icon"></i>
+        </button>
+      </div>
+      <ng-template ngbNavContent>
+        <div class="container-scroll" #scrollContainer>
+          <app-slide-conteudo 
+            [items]="carouselItems" 
+            (chegouNoUltimoSlide)="marcarComoConcluido(1)"
+            id="slide-1"
+            (menuToggle)="onMenuToggle($event)">
+          </app-slide-conteudo>
+        </div>
+      </ng-template>
+    </ng-container>
+  </nav>
+  <div [ngbNavOutlet]="nav" class="flex-grow-1" style="width: 80vw;"></div>
+</div>

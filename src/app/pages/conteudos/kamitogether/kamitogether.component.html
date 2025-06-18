@@ -9,7 +9,7 @@
                         <button ngbAccordionToggle class="botao_abrir_curso">Contábil</button>
                     </div>
                     <div ngbAccordionCollapse >
-                        <div ngbAccordionBody>
+                        <div ngbAccordionBody class="lista_itens_menu">
                             <nav ngbNav #nav="ngbNav" [(activeId)]="menuAtivo">
                                 <h3>Modulo 1</h3>
                                 <ng-container ngbNavItem="-1"><ng-template ngbNavContent></ng-template></ng-container>
@@ -42,12 +42,12 @@
                 </div>
 
                 <!-- CURSO 2 -->
-                <div ngbAccordionItem class="p-3">
+                <div ngbAccordionItem class="p-3" [collapsed]="false">
                     <div ngbAccordionHeader>
                         <button ngbAccordionToggle class="botao_abrir_curso">Fiscal</button>
                     </div>
                     <div ngbAccordionCollapse>
-                        <div ngbAccordionBody>
+                        <div ngbAccordionBody class="lista_itens_menu">
                             <nav ngbNav #nav2="ngbNav" [(activeId)]="menuAtivo">
                                 <h5>Modulo 1</h5>
                                 <ng-container ngbNavItem="-1"><ng-template ngbNavContent></ng-template></ng-container>

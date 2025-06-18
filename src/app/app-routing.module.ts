@@ -7,6 +7,7 @@ import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 import { AuthGuard } from './auth.guard';
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
+import { TesteComponent } from './pages/conteudos/teste/teste.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'cursos/solicitacao-de-documentos', component: SolicitacaoDeDocumentosComponent, canActivate: [AuthGuard] },
   { path: 'cursos/integracao', component: IntegracaoComponent, canActivate: [AuthGuard] },
   { path: 'cursos/kamitogether', component: KamitogetherComponent, canActivate: [AuthGuard] },
+  { path: 'cursos/teste', component: TesteComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
