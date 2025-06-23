@@ -21,6 +21,12 @@ export class TesteComponent {
       { type: 'video', src: '../../../assets/videos/teste/2.mp4' },
       { type: 'video', src: '../../../assets/videos/teste/3.mp4' },
       { type: 'video', src: '../../../assets/videos/teste/4.mp4' },
+      { type: 'video', src: '../../../assets/videos/teste/5.mp4' },
+      { type: 'video', src: '../../../assets/videos/teste/6.mp4' },
+      { type: 'video', src: '../../../assets/videos/teste/7.mp4' },
+      { type: 'video', src: '../../../assets/videos/teste/8.mp4' },
+      { type: 'video', src: '../../../assets/videos/teste/9.mp4' },
+      { type: 'video', src: '../../../assets/videos/teste/10.mp4' },
     ];
   
     ngOnInit() {

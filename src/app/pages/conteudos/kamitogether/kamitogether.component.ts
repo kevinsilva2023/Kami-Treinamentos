@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./kamitogether.component.scss']
 })
 export class KamitogetherComponent {
-  menuAtivo = '';
+  menuAtivo = '1';
   menuAtivo2 = '';
 }

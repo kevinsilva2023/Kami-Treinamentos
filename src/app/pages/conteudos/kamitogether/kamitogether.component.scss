@@ -20,17 +20,17 @@
         button {
             padding: 10px 30px;
             border-radius: 20px;
-            background-color: #0b1e3d62;
+            background-color: rgba(211, 211, 211, 0.171);;
             border: none;
             color: lightgray;
             font-weight: bolder;
             border: 1px solid #fff;
             transition:  0.5s;
 
-                &:hover {
-                    background-color: #0B1E3D;
-                    color: #FFF
-                }
+            &:hover {
+                background-color: #0B1E3D;
+                color: #FFF
+            }
         }
     }
 
@@ -155,12 +155,13 @@
         }
 
         .conteudo_curso {
+            padding: 20px;
             background-color: rgba(211, 211, 211, 0.171);
             border: 1px solid white;
             border-radius: 10px;
             height: 100%;
             width: 75%;
+            overflow-y: scroll;
         }
     }
 }
-
