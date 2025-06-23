@@ -36,7 +36,7 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
 
   handleKeyDown = (event: KeyboardEvent): void => {
     if (this.fullscreenAtivo && (event.key === 'Escape' || event.key === 'F11')) {
-      this.toggleFullscreen(); 
+      this.toggleFullscreen();
     }
   };
 
@@ -47,11 +47,22 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
   };
 
   onSlideChange(event: any) {
+    this.pausarVideos();
+
     const activeSlideId = parseInt(event.current.replace('ngb-slide-', ''), 10);
     if (activeSlideId === this.items.length - 1) {
       localStorage.setItem(`${this.id}`, 'true');
       this.chegouNoUltimoSlide.emit();
     }
+  }
+
+  pausarVideos() {
+    const videos = document.querySelectorAll<HTMLVideoElement>('.media-wrapper video');
+    videos.forEach(video => {
+      if (!video.paused) {
+        video.pause();
+      }
+    });
   }
 
   fecharMenu() {
