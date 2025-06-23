@@ -23,15 +23,6 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
 
   cursos: Curso[] = [
     {
-      titulo: 'MODELO',
-      categoria: this.geral,
-      subtitulo: 'MODELO',
-      imagemCurso: '/assets/background-web.jpg',
-      direcionamentoCurso: '/cursos/modelo',
-      desabilitado: false,
-      usuariosPermitidos: ['kevin', 'daniel']
-    },
-    {
       titulo: 'INTEGRAÇÃO',
       categoria: this.integracao,
       subtitulo: 'Mais que um começo, este é o ponto de partida para transformar talento em resultados extraordinários!',
@@ -48,22 +39,30 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       desabilitado: false,
     },
     {
+      titulo: 'TRIBUTOS DiIFERIDOS',
+      categoria: this.contabil,
+      subtitulo: 'Aprenda o básico sobre tributos diferidos, como identificar e registrar esses impostos que afetam o resultado financeiro das empresas ao longo do tempo.',
+      imagemCurso: '/assets/imagens/tributos-diferidos/card-curso.png',
+      direcionamentoCurso: '/cursos/tributos-diferidos',
+      desabilitado: false,
+    },
+    {
+      titulo: 'MODELO',
+      categoria: this.geral,
+      subtitulo: 'MODELO',
+      imagemCurso: '/assets/background-web.jpg',
+      direcionamentoCurso: '/cursos/modelo',
+      desabilitado: false,
+      usuariosPermitidos: ['kevin']
+    },
+    {
       titulo: 'KAMITOGETHER',
       categoria: this.geral,
       subtitulo: 'Aprenda todas funcionalidades e processos da nossa melhor plataforma de automações.',
       imagemCurso: '/assets/background-web.jpg',
       direcionamentoCurso: '/cursos/kamitogether',
       desabilitado: false,
-      usuariosPermitidos: ['kevin', 'kevin silva', 'daniel']
-    },
-    {
-      titulo: 'teste',
-      categoria: this.geral,
-      subtitulo: 'teste',
-      imagemCurso: '/assets/background-web.jpg',
-      direcionamentoCurso: '/cursos/teste',
-      desabilitado: false,
-      usuariosPermitidos: ['kevin', 'kevin silva', 'daniel']
+      usuariosPermitidos: ['kevin']
     },
   ];
 

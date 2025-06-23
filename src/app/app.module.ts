@@ -24,8 +24,8 @@ import { ModeloComponent } from './pages/conteudos/modelo/modelo.component';
 import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.component';
 import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
-import { TesteComponent } from './pages/conteudos/teste/teste.component';
-
+import { TributosDiferidosComponent } from './pages/conteudos/tributos-diferidos/tributos-diferidos.component';
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,7 @@ import { TesteComponent } from './pages/conteudos/teste/teste.component';
     TextoConteudoComponent,
     ModeloEmailComponent,
     KamitogetherComponent,
-    TesteComponent,
+    TributosDiferidosComponent,
   ],
   imports: [
     BrowserModule,

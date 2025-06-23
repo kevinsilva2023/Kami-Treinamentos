@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.component';
 
 @Component({
-  selector: 'app-teste',
-  templateUrl: './teste.component.html',
+  selector: 'app-tributos-deferidos',
+  templateUrl: './tributos-diferidos.component.html',
   styleUrls: ['../modelo/modelo.component.scss']
 })
-export class TesteComponent {
+export class TributosDiferidosComponent {
 
-    private readonly STORAGE_KEY = 'teste';
+    private readonly STORAGE_KEY = 'tributos-diferidos';
     passosConcluidos: number[] = [];
     activeId: string = '1';
     mostrarBotaoProximo = false;
