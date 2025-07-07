@@ -8,6 +8,7 @@ import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.com
 import { AuthGuard } from './auth.guard';
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
 import { TributosDiferidosComponent } from './pages/conteudos/tributos-diferidos/tributos-diferidos.component';
+import { CertidoesComponent } from './pages/conteudos/certidoes/certidoes.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'cursos/integracao', component: IntegracaoComponent, canActivate: [AuthGuard] },
   { path: 'cursos/kamitogether', component: KamitogetherComponent, canActivate: [AuthGuard] },
   { path: 'cursos/tributos-diferidos', component: TributosDiferidosComponent, canActivate: [AuthGuard] },
+  { path: 'cursos/certidoes', component: CertidoesComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

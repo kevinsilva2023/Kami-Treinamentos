@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { CarouselItem } from 'src/app/shared/slide-conteudo/slide-conteudo.component';
 
 @Component({
-  selector: 'app-tributos-deferidos',
-  templateUrl: './tributos-diferidos.component.html',
+  selector: 'app-certidoes',
+  templateUrl: './certidoes.component.html',
   styleUrls: ['../modelo/modelo.component.scss']
 })
-export class TributosDiferidosComponent {
+export class CertidoesComponent {
 
-    private readonly STORAGE_KEY = 'tributos-diferidos';
+    private readonly STORAGE_KEY = 'certidoes';
     passosConcluidos: number[] = [];
     activeId: string = '1';
     mostrarBotaoProximo = false;
@@ -17,16 +17,21 @@ export class TributosDiferidosComponent {
     menuOculto = false;
   
     carouselItems: CarouselItem[] = [
-      { type: 'video', src: '/assets/tributos-diferidos/teste/1.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/2.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/3.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/4.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/5.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/6.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/7.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/8.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/9.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/10.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/1.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/2.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/3.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/4.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/5.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/6.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/7.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/8.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/9.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/10.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/11.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/12.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/13.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/14.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/15.mp4' },
     ];
   
     ngOnInit() {

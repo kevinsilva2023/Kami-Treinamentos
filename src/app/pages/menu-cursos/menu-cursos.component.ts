@@ -47,6 +47,14 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       desabilitado: false,
     },
     {
+      titulo: 'CERTIDÕES',
+      categoria: this.geral,
+      subtitulo: 'Aprenda a consultar, interpretar e emitir certidões que comprovam a regularidade fiscal de empresas nas esferas federal, estadual e municipal.',
+      imagemCurso: '/assets/imagens/certidoes/card-curso.png',
+      direcionamentoCurso: '/cursos/certidoes',
+      desabilitado: false,
+    },
+    {
       titulo: 'MODELO',
       categoria: this.geral,
       subtitulo: 'MODELO',

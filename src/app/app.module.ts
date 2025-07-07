@@ -25,6 +25,7 @@ import { IntegracaoComponent } from './pages/conteudos/integracao/integracao.com
 import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-de-documentos/solicitacao-de-documentos.component';
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
 import { TributosDiferidosComponent } from './pages/conteudos/tributos-diferidos/tributos-diferidos.component';
+import { CertidoesComponent } from './pages/conteudos/certidoes/certidoes.component';
  
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { TributosDiferidosComponent } from './pages/conteudos/tributos-diferidos
     ModeloEmailComponent,
     KamitogetherComponent,
     TributosDiferidosComponent,
+    CertidoesComponent,
   ],
   imports: [
     BrowserModule,
