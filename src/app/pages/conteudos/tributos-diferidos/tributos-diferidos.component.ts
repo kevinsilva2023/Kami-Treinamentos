@@ -17,16 +17,16 @@ export class TributosDiferidosComponent {
     menuOculto = false;
   
     carouselItems: CarouselItem[] = [
-      { type: 'video', src: '/assets/tributos-diferidos/teste/1.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/2.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/3.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/4.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/5.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/6.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/7.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/8.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/9.mp4' },
-      { type: 'video', src: '/assets/tributos-diferidos/teste/10.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/1.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/2.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/3.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/4.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/5.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/6.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/7.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/8.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/9.mp4' },
+      { type: 'video', src: '/assets/tributos-diferidos/10.mp4'},
     ];
   
     ngOnInit() {
