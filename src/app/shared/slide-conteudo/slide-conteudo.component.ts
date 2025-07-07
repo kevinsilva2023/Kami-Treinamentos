@@ -23,6 +23,7 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
 
   menuOculto = false;
   fullscreenAtivo = false;
+  bloqueioTemporarioEspaco = false;
 
   ngOnInit(): void {
     document.addEventListener('keydown', this.handleKeyDown);
@@ -35,52 +36,81 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
   }
 
   handleKeyDown = (event: KeyboardEvent): void => {
+    const isTyping =
+      event.target instanceof HTMLInputElement ||
+      event.target instanceof HTMLTextAreaElement ||
+      (event.target instanceof HTMLElement &&
+        event.target.getAttribute('contenteditable') === 'true');
+
+    if (isTyping) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
     if (this.fullscreenAtivo && (event.key === 'Escape' || event.key === 'F11')) {
       this.toggleFullscreen();
       return;
     }
 
-    // Controle pelas setas do teclado
-    if (event.key === 'ArrowRight') {
-      event.preventDefault();
-      this.carousel.next();
-      return;
-    }
+    switch (event.key) {
+      case 'ArrowRight':
+        this.carousel.next();
+        break;
 
-    if (event.key === 'ArrowLeft') {
-      event.preventDefault();
-      this.carousel.prev();
-      return;
-    }
+      case 'ArrowLeft':
+        this.carousel.prev();
+        break;
 
-    if (event.code === 'Space') {
-      event.preventDefault();
-
-      const activeSlideId = this.getActiveSlideIndex();
-      if (activeSlideId === null) return;
-
-      const videos = document.querySelectorAll<HTMLVideoElement>('.media-wrapper video');
-      const videoAtivo = videos[activeSlideId];
-      if (!videoAtivo) return;
-
-      if (videoAtivo.paused) {
-        videoAtivo.play();
-      } else {
-        videoAtivo.pause();
-      }
+      case ' ':
+      case 'Spacebar':
+        if (!this.bloqueioTemporarioEspaco) {
+          this.toggleVideoPlayPause();
+        }
+        break;
     }
   };
 
-  getActiveSlideIndex(): number | null {
-    if (!this.carousel) return null;
+  toggleVideoPlayPause(): void {
+    const video = this.getActiveSlideVideo();
+    if (!video || !this.isElementInViewport(video)) return;
 
-    const activeId = this.carousel.activeId;
-    if (!activeId) return null;
+    // Cancela qualquer tentativa automática de reprodução
+    video.autoplay = false;
 
-    const match = activeId.match(/ngb-slide-(\d+)/);
-    if (!match) return null;
+    // Remove temporariamente eventos que possam causar replay
+    const clone = video.cloneNode(true) as HTMLVideoElement;
+    if (video.paused) {
+      video.play().catch(() => { });
+    } else {
+      const currentTime = video.currentTime;
+      const parent = video.parentElement;
+      video.pause();
 
-    return parseInt(match[1], 10);
+      // Força interrupção de qualquer auto-play pendente
+      video.src = '';
+      video.load();
+
+      if (parent) {
+        parent.replaceChild(clone, video);
+        clone.currentTime = currentTime;
+      }
+    }
+  }
+
+  getActiveSlideVideo(): HTMLVideoElement | null {
+    const activeSlide = document.querySelector('.carousel-item.active');
+    if (!activeSlide) return null;
+    return activeSlide.querySelector('video');
+  }
+
+  isElementInViewport(el: HTMLElement): boolean {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
   handleFullscreenChange = (): void => {
@@ -91,7 +121,6 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
 
   async onSlideChange(event: any) {
     this.pausarVideos();
-
     await this.delay(50);
 
     const carouselElem = document.querySelector('.custom-carousel') as HTMLElement;
@@ -101,13 +130,13 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
 
     const activeSlideId = parseInt(event.current.replace('ngb-slide-', ''), 10);
     if (activeSlideId === this.items.length - 1) {
-      localStorage.setItem(`${this.id}`, 'true');
+      localStorage.setItem(this.id, 'true');
       this.chegouNoUltimoSlide.emit();
     }
   }
 
-  pausarVideos() {
-    const videos = document.querySelectorAll<HTMLVideoElement>('.media-wrapper video');
+  pausarVideos(): void {
+    const videos = document.querySelectorAll('video');
     videos.forEach(video => {
       if (!video.paused) {
         video.pause();
@@ -115,30 +144,28 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
     });
   }
 
-  fecharMenu() {
+  fecharMenu(): void {
     this.menuOculto = !this.menuOculto;
     this.menuToggle.emit(this.menuOculto);
   }
 
-  toggleFullscreen() {
+  toggleFullscreen(): void {
     const elem = document.querySelector('.slide-card');
-
     if (!elem) return;
+
+    this.bloqueioTemporarioEspaco = true;
+    setTimeout(() => (this.bloqueioTemporarioEspaco = false), 600); // maior tempo de bloqueio
 
     if (!this.fullscreenAtivo) {
       this.fullscreenAtivo = true;
-      if (elem.requestFullscreen) {
-        elem.requestFullscreen();
-      }
+      elem.requestFullscreen?.();
     } else {
       this.fullscreenAtivo = false;
-      if (document.fullscreenElement && document.exitFullscreen) {
-        document.exitFullscreen();
-      }
+      document.exitFullscreen?.();
     }
   }
 
-  delay(ms: number) {
+  delay(ms: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
