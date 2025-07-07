@@ -18,3 +18,34 @@ $grid-breakpoints: (
     box-sizing: border-box;
     user-select: none;
 }
+
+.custom-carousel:fullscreen,
+.custom-carousel:-webkit-full-screen, /* Safari */
+.custom-carousel:-moz-full-screen,    /* Firefox */
+.custom-carousel:-ms-fullscreen {      /* IE/Edge */
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
+.custom-carousel:fullscreen .media-wrapper,
+.custom-carousel:-webkit-full-screen .media-wrapper,
+.custom-carousel:-moz-full-screen .media-wrapper,
+.custom-carousel:-ms-fullscreen .media-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.custom-carousel:fullscreen video,
+.custom-carousel:-webkit-full-screen video,
+.custom-carousel:-moz-full-screen video,
+.custom-carousel:-ms-fullscreen video,
+.custom-carousel:fullscreen img,
+.custom-carousel:-webkit-full-screen img,
+.custom-carousel:-moz-full-screen img,
+.custom-carousel:-ms-fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ou cover, dependendo do efeito que quiser */
+}

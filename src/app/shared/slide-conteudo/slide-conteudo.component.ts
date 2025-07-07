@@ -37,8 +37,51 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
   handleKeyDown = (event: KeyboardEvent): void => {
     if (this.fullscreenAtivo && (event.key === 'Escape' || event.key === 'F11')) {
       this.toggleFullscreen();
+      return;
+    }
+
+    // Controle pelas setas do teclado
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      this.carousel.next();
+      return;
+    }
+
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      this.carousel.prev();
+      return;
+    }
+
+    if (event.code === 'Space') {
+      event.preventDefault();
+
+      const activeSlideId = this.getActiveSlideIndex();
+      if (activeSlideId === null) return;
+
+      const videos = document.querySelectorAll<HTMLVideoElement>('.media-wrapper video');
+      const videoAtivo = videos[activeSlideId];
+      if (!videoAtivo) return;
+
+      if (videoAtivo.paused) {
+        videoAtivo.play();
+      } else {
+        videoAtivo.pause();
+      }
     }
   };
+
+  getActiveSlideIndex(): number | null {
+    if (!this.carousel) return null;
+
+    const activeId = this.carousel.activeId;
+    if (!activeId) return null;
+
+    const match = activeId.match(/ngb-slide-(\d+)/);
+    if (!match) return null;
+
+    return parseInt(match[1], 10);
+  }
 
   handleFullscreenChange = (): void => {
     if (!document.fullscreenElement && this.fullscreenAtivo) {
@@ -46,8 +89,15 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
     }
   };
 
-  onSlideChange(event: any) {
+  async onSlideChange(event: any) {
     this.pausarVideos();
+
+    await this.delay(50);
+
+    const carouselElem = document.querySelector('.custom-carousel') as HTMLElement;
+    if (carouselElem) {
+      carouselElem.focus();
+    }
 
     const activeSlideId = parseInt(event.current.replace('ngb-slide-', ''), 10);
     if (activeSlideId === this.items.length - 1) {
@@ -71,18 +121,25 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
   }
 
   toggleFullscreen() {
-    this.fullscreenAtivo = !this.fullscreenAtivo;
-    const elem = document.documentElement;
+    const elem = document.querySelector('.custom-carousel');
 
-    if (this.fullscreenAtivo) {
+    if (!elem) return;
+
+    if (!this.fullscreenAtivo) {
+      this.fullscreenAtivo = true;
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       }
     } else {
+      this.fullscreenAtivo = false;
       if (document.fullscreenElement && document.exitFullscreen) {
         document.exitFullscreen();
       }
     }
+  }
+
+  delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
 
@@ -90,4 +147,3 @@ export interface CarouselItem {
   type: 'image' | 'video';
   src: string;
 }
-
