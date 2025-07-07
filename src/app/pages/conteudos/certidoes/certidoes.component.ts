@@ -32,6 +32,8 @@ export class CertidoesComponent {
       { type: 'video', src: '/assets/videos/certidoes/13.mp4' },
       { type: 'video', src: '/assets/videos/certidoes/14.mp4' },
       { type: 'video', src: '/assets/videos/certidoes/15.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/16.mp4' },
+      { type: 'video', src: '/assets/videos/certidoes/17.mp4' },
     ];
   
     ngOnInit() {
