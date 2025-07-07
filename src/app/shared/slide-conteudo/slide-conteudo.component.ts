@@ -121,7 +121,7 @@ export class SlideConteudoComponent implements OnInit, OnDestroy {
   }
 
   toggleFullscreen() {
-    const elem = document.querySelector('.custom-carousel');
+    const elem = document.querySelector('.slide-card');
 
     if (!elem) return;
 
