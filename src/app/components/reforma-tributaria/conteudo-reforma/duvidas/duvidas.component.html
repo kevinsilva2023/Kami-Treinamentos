@@ -4,9 +4,18 @@
         <span>Perguntas Frequentes</span>
     </div>
 
-    <p-accordion class="teste">
-        <p-accordionTab class="teste2" *ngFor="let pergunta of perguntas" [header]="pergunta.pergunta">
-            {{ pergunta.resposta }}
-        </p-accordionTab>
-    </p-accordion>
+    <div class="custom-accordion">
+        <ngb-accordion *ngFor="let item of perguntas;">
+            <ngb-panel>
+                <ng-template ngbPanelTitle>
+                    <div class="accordion-header-custom">
+                        {{ item.pergunta }}
+                    </div>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                    <p>{{ item.resposta }}</p>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
 </div>

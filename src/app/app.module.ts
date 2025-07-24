@@ -45,10 +45,8 @@ import { NotaFiscalComponent } from './components/reforma-tributaria/conteudo-re
 import { DuvidasComponent } from './components/reforma-tributaria/conteudo-reforma/duvidas/duvidas.component';
 import { BaseLegalComponent } from './components/reforma-tributaria/conteudo-reforma/base-legal/base-legal.component';
 
-import { TimelineModule } from 'primeng/timeline';
-import { AccordionModule } from 'primeng/accordion';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -95,10 +93,8 @@ import { CardModule } from 'primeng/card';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    TimelineModule,
-    CardModule,
-    ButtonModule,
-    AccordionModule
+    NgbAccordionModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
