@@ -1,0 +1,38 @@
+<div class="sidebar" [class.collapsed]="isCollapsed">
+    <div class="sidebar-header">
+      <div class="logo-parametriz">
+        <img src="/assets/kami-logo-2.png">
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+
+      <button class="botao-sidebar" (click)="toggleSidebar()">
+        <i class="fa-solid fa-angles-left" *ngIf="!isCollapsed"></i>
+        <i class="fa-solid fa-angles-right" *ngIf="isCollapsed"></i>
+      </button>
+
+      <ul class="nav flex-column">
+        <li class="nav-item" *ngFor="let item of menuItems$ | async">
+          <a 
+            class="nav-link" 
+            href="javascript:void(0)"
+            [class.active]="item.active"
+            (click)="onMenuItemClick(item)"
+            [attr.title]="item.label"
+            [attr.data-menu-id]="item.id">
+            <i class="fa-solid" [class]="'fa-' + item.icon"></i>
+            <span class="nav-text" *ngIf="!isCollapsed">{{ item.label }}</span>
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  
+    <div class="sidebar-footer" *ngIf="!isCollapsed">
+      <div class="version-info">
+        <small>v1.0.0</small>
+      </div>
+    </div>
+  </div>
+  
+  

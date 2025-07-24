@@ -1,3 +1,5 @@
+
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +28,28 @@ import { SolicitacaoDeDocumentosComponent } from './pages/conteudos/solicitacao-
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
 import { TributosDiferidosComponent } from './pages/conteudos/tributos-diferidos/tributos-diferidos.component';
 import { CertidoesComponent } from './pages/conteudos/certidoes/certidoes.component';
- 
+import { ReformaTributariaComponent } from './pages/conteudos/reforma-tributaria/reforma-tributaria.component';
+import { SidebarReformaComponent } from './components/reforma-tributaria/sidebar-reforma/sidebar-reforma.component';
+import { ConteudoReformaComponent } from './components/reforma-tributaria/conteudo-reforma/conteudo-reforma.component';
+import { IntroducaoComponent } from './components/reforma-tributaria/conteudo-reforma/introducao/introducao.component';
+import { CronogramaComponent } from './components/reforma-tributaria/conteudo-reforma/cronograma/cronograma.component';
+import { CalculoComponent } from './components/reforma-tributaria/conteudo-reforma/calculo/calculo.component';
+import { CreditoComponent } from './components/reforma-tributaria/conteudo-reforma/credito/credito.component';
+import { RecolhimentoComponent } from './components/reforma-tributaria/conteudo-reforma/recolhimento/recolhimento.component';
+import { RestituicaoCashbackComponent } from './components/reforma-tributaria/conteudo-reforma/restituicao-cashback/restituicao-cashback.component';
+import { SplitPaymentComponent } from './components/reforma-tributaria/conteudo-reforma/split-payment/split-payment.component';
+import { IpiComponent } from './components/reforma-tributaria/conteudo-reforma/ipi/ipi.component';
+import { SimplesNacionalComponent } from './components/reforma-tributaria/conteudo-reforma/simples-nacional/simples-nacional.component';
+import { ImpostoSeletivoComponent } from './components/reforma-tributaria/conteudo-reforma/imposto-seletivo/imposto-seletivo.component';
+import { NotaFiscalComponent } from './components/reforma-tributaria/conteudo-reforma/nota-fiscal/nota-fiscal.component';
+import { DuvidasComponent } from './components/reforma-tributaria/conteudo-reforma/duvidas/duvidas.component';
+import { BaseLegalComponent } from './components/reforma-tributaria/conteudo-reforma/base-legal/base-legal.component';
+
+import { TimelineModule } from 'primeng/timeline';
+import { AccordionModule } from 'primeng/accordion';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,12 +73,32 @@ import { CertidoesComponent } from './pages/conteudos/certidoes/certidoes.compon
     KamitogetherComponent,
     TributosDiferidosComponent,
     CertidoesComponent,
+    ReformaTributariaComponent,
+    SidebarReformaComponent,
+    ConteudoReformaComponent,
+    IntroducaoComponent,
+    CronogramaComponent,
+    CalculoComponent,
+    CreditoComponent,
+    RecolhimentoComponent,
+    RestituicaoCashbackComponent,
+    SplitPaymentComponent,
+    IpiComponent,
+    SimplesNacionalComponent,
+    ImpostoSeletivoComponent,
+    NotaFiscalComponent,
+    DuvidasComponent,
+    BaseLegalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    TimelineModule,
+    CardModule,
+    ButtonModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

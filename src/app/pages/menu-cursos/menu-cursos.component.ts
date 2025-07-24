@@ -39,11 +39,19 @@ export class MenuCursosComponent implements OnInit, OnDestroy {
       desabilitado: false,
     },
     {
-      titulo: 'TRIBUTOS DiIFERIDOS',
+      titulo: 'TRIBUTOS DIIFERIDOS',
       categoria: this.contabil,
       subtitulo: 'Aprenda o básico sobre tributos diferidos, como identificar e registrar esses impostos que afetam o resultado financeiro das empresas ao longo do tempo.',
       imagemCurso: '/assets/imagens/tributos-diferidos/card-curso.png',
       direcionamentoCurso: '/cursos/tributos-diferidos',
+      desabilitado: false,
+    },
+    {
+      titulo: 'REFORMA TRIBUTÁRIA',
+      categoria: this.geral,
+      subtitulo: 'O curso de Reforma Tributária oferece uma visão prática e objetiva das mudanças no sistema fiscal brasileiro. Prepare-se para entender os novos tributos, regras e impactos nas empresas.',
+      imagemCurso: '/assets/imagens/reforma-tributaria/card-curso.png',
+      direcionamentoCurso: '/cursos/reforma-tributaria',
       desabilitado: false,
     },
     {

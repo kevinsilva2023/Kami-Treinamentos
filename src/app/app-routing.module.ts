@@ -9,6 +9,7 @@ import { AuthGuard } from './auth.guard';
 import { KamitogetherComponent } from './pages/conteudos/kamitogether/kamitogether.component';
 import { TributosDiferidosComponent } from './pages/conteudos/tributos-diferidos/tributos-diferidos.component';
 import { CertidoesComponent } from './pages/conteudos/certidoes/certidoes.component';
+import { ReformaTributariaComponent } from './pages/conteudos/reforma-tributaria/reforma-tributaria.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'cursos/kamitogether', component: KamitogetherComponent, canActivate: [AuthGuard] },
   { path: 'cursos/tributos-diferidos', component: TributosDiferidosComponent, canActivate: [AuthGuard] },
   { path: 'cursos/certidoes', component: CertidoesComponent, canActivate: [AuthGuard] },
+  { path: 'cursos/reforma-tributaria', component: ReformaTributariaComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
